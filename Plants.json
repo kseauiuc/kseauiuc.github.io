@@ -1,0 +1,397 @@
+[{
+"Toyota Camry" : {
+                      "Plant_1" : {
+                             "Name":"Fuji Heavy Industries - SIA Assembly",
+                             "Location":"Lafayette, IN, US",
+                             "LatLong":"40.3773138,-86.7990629",
+                             "Environment_Rating" : "9/10",
+                             "Community_Involvement":"7/10",
+                             "Num_Employees" :"2230",
+                             "Size" : "3,360,000m2"
+                        },
+                        
+                        "Plant_2" : {
+                        "Name":"Toyota Group - TMMK Complex",
+                        "Location":"Georgetown, KY",
+                        "LatLong":"38.2610322,-84.5317628",
+                        "Environment_Rating" : "9/10",
+                        "Community_Involvement":"8/10",
+                        "Num_Employees" :"7000",
+                        "Size" : "7.5 million sq. ft."
+                        },
+                        
+                        "Plant_3" : {
+                        "Name":"Tsutsumi",
+                        "Location":"Toyota, Aichi, JP",
+                        "LatLong":"35.1408902,137.3108723",
+                        "Environment_Rating" : "8/10",
+                        "Community_Involvement":"6/10",
+                        "Num_Employees" :"5249",
+                        "Size" : "940,000 m2"
+                        },
+                        
+                        "Plant_4" : {
+                          
+                        "Name":"Toyota Motor Manufacturing West Virginia, Inc.:Engine",
+                        "Location":"Buffalo, WV",
+                        "LatLong":"38.6074615,-81.9813594",
+                        "Environment_Rating" : "6/10",
+                        "Community_Involvement":"2/10",
+                        "Num_Employees" :"1300",
+                        "Size" : "270 acres"
+                        },
+                        
+                        "Plant_5" : {
+                        "Name":"Toyota Motor East Japan, Inc.-Miyagi Taiwa",
+                        "Plant_5_location":"Taiwa, Miyagi, JP",
+                        "Plant_5_latlong":"38.4217614,140.8042707",
+                        "Environment_Rating" : "7/10",
+                        "Community_Involvement":"2/10",
+                        "Num_Employees" :"500",
+                        "Size" : "618,000 m2"
+                        }
+                        
+}
+},
+
+{
+"Chevrolet Corvette" : {
+                          "Plant_1" : {
+                             "Name":"Bowling Green Assembly Plant",
+                             "Location":"Bowling Green, Kentucky",
+                             "LatLong":"37.009,86.373",
+                             "Environment_Rating" : "9/10",
+                             "Community_Involvement":"9/10",
+                             "Num_Employees" :"918",
+                             "Fact_Size" : "1000000 sq feet",
+                             "Land_Size" : "212 acres"
+                          },
+                          
+                           "Plant_2" : {
+                             "Name":"Kokomo Operations: Electronic Assembly,Transmission",
+                             "Location":"Kokomo, Indiana, US",
+                             "LatLong":"40.455,-86.109",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "1013",
+                             "Fact_size" : "2600000 sq feet",
+                             "Land_Size" : "272 acres"
+                        },
+                        
+                         "Plant_3" : {
+                             "Name":"Lockport Components: Radiators, Condensers, Evaporators, Oil Coolers",
+                             "Location":"Lockport ,New York, US",
+                             "LatLong":"43.169,-78.732",
+                             "Environment_Rating" : "8/10",
+                             "Community_Involvement":"9/10",
+                             "Num_Employees" :"1587",
+                             "Fact_Size" : "2600000 sq feet",
+                             "Land_Size" : "495 acres"
+                        },
+                        
+                        "Plant_4" : {
+                             "Name":"Pontiac Metal Center: Stamping",
+                             "Location":"Pontiac, Michigan, US",
+                             "LatLong":"42.466,-83.291",
+                             "Environment_Rating" : "8/10",
+                             "Community_Involvement":"7/10",
+                             "Num_Employees" : "491",
+                             "Fact_Size" : "1250000 sq feet"
+                             
+                        },
+                        
+                        "Plant_5" : {
+                             "Name":"Port Melbourne",
+                             "Location":"Fishermans Bend, Victoria, South Australia",
+                             "LatLong":"",
+                             "Environment_Rating" : "",
+                             "Num_Employees" :"1300",
+                             "Size" : "",
+                             "info":"It will be closed by 2017"
+                        },
+                        "Plant_6" : {
+                             "Name":"Performance Build Center in Wixom",
+                             "Location":"Wixom, Michigan, United States",
+                             "LatLong":"",
+                             "Community_Involvement":"5/10",
+                             "Environment_Rating" : "2/10",
+                             "Num_Employees" :"29",
+                             "Size" : "100,000 sq. ft."
+                        }
+}
+},
+{
+"Chevrolet Traverse" : {
+  
+                        "Plant_1" : {
+                             "Name":"Spring Hill Manufacturing",
+                             "Location":"Spring Hill, Tennessee, US",
+                             "LatLong":"35.743,86.957",
+                             "Environment_Rating" : "9/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"2643",
+                             "Fact_Size" : "6900000 sq feet",
+                             "Land_Size" : "2,100 acres"
+                          },
+                        
+                        "Plant_2" : {
+                             "Name":"Delco Moraine NDH",
+                             "Location":"Moraine, Ohio, US",
+                             "LatLong":"46.909,-96.808",
+                             "Environment_Rating" : "8/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"",
+                             "Size" : ""
+
+                          },
+                       "Plant_3" : {
+                             "Name":"Delco Remy",
+                             "Location":"Anderson, Indiana, US",
+                             "LatLong":"40.047,-85.721",
+                             "Environment_Rating" : "5/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"7229",
+                             "Size" : "255-acres"
+                             
+                          },
+                        "Plant_4" : {
+                             "Name":"Warren Transmission",
+                             "Location":"Warren, Michigan, US",
+                             "LatLong":"42.462,-83.000",
+                             "Environment_Rating" : "7/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"581",
+                             "Size" : "2100000 sq feet"
+                             
+                          },
+                        "Plant_5" : {
+                             "Name":"Pontiac Metal Center",
+                             "Location":"Pontiac, Michigan, US",
+                             "LatLong":"42.466,-83.291",
+                             "Environment_Rating" : "8/10",
+                             "Community_Involvement":"7/10",
+                             "Num_Employees" :"491",
+                             "Size" : "1250000 sq feet"
+                          }
+}                       
+},
+{
+  "Cadillac ELR":{
+                        "Plant_1" : {
+                             "Name":"Detroit-Hamtramck",
+                             "Location":"Detroit, Michigan, US",
+                             "LatLong":"42.348,-83.053",
+                             "Environment_Rating" : "7/10",
+                             "Community_Involvement":"7/10",
+                             "Num_Employees" : "1600",
+                             "Size" : "4.1 million"
+                             
+                        },
+                        "Plant_2" : {
+                             "Name":"Bay City Powertrain",
+                             "Location":"Bay City, Michigan, US",
+                             "LatLong":"43.606,83.878",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "394",
+                             "Size" : "975,000 sq. ft."
+                             
+                        },
+                        "Plant_3" : {
+                             "Name":"Brownstown Battery",
+                             "Location":"Brownstown Charter Twp., Michigan, US",
+                             "LatLong":"42.156,-83.240",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "100",
+                             "Size" : "479,000 square feet"
+                             
+                        }
+  }
+},
+{
+  "Cadillac CTS":{
+                        "Plant_1" : {
+                             "Name":"Rochester Operations",
+                             "Location":"Rochester, New York, US",
+                             "LatLong":"40.113,-88.227",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "1061",
+                             "Size" : "97 acres"
+                             
+                        },
+                        "Plant_2" : {
+                             "Name":"Flint Tool & Die",
+                             "Location":"Flint, Michigan, US",
+                             "LatLong":"43.012,-83.701",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "443",
+                             "Size" : "318,500 square feet"
+                             
+                        },
+                        "Plant_3" : {
+                             "Name":"Lansing Grand River Assembly",
+                             "Location":"Lansing, Michigan, US",
+                             "LatLong":"42.724,-84.556",
+                             "Environment_Rating" : "4/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "1780",
+                             "Size" : "111 acres"
+                        },
+                        "Plant_4" : {
+                             "Name":"Tonawanda Engine Plant",
+                             "Location":"Buffalo, New York, US",
+                             "LatLong":"42.962,-78.914",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "1695",
+                             "Size" : "111 acres"
+                        }
+  }
+},
+{
+  "Chevrolet Cruze":{
+                        "Plant_1" : {
+                             "Name":"Lordstown Complex",
+                             "Location":"Warren, Ohio, US",
+                             "LatLong":"40.113,-88.227",
+                             "Environment_Rating" : "5/10",
+                             "Community_Involvement":"6/10",
+                             "Num_Employees" : "4500",
+                             "Size" : "905 acres"
+                             
+                        },
+                        "Plant_2" : {
+                             "Name":"Flint Engine Operations",
+                             "Location":"Flint, Michigan, US",
+                             "LatLong":"43.982,-83.718",
+                             "Environment_Rating" : "5/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "856",
+                             "Size" : "1,165,212 sq ft"
+                             
+                        },
+                        "Plant_3" : {
+                             "Name":"GM Holden Ltd.",
+                             "Location":"Elizabeth, South Australia",
+                             "LatLong":"-34.720,138.671",
+                             "Environment_Rating" : "7/10",
+                             "Community_Involvement":"4/10",
+                             "Num_Employees" : "1250",
+                             "Size" : "39.61 Hectares"
+                             
+                        }
+  }
+},
+{
+  "GMC Sierra":{
+                        "Plant_1" : {
+                             "Name":"Baltimore Operations",
+                             "Location":"White Marsh, Maryland, US",
+                             "LatLong":"39.372,-76.439",
+                             "Environment_Rating" : "8/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "264",
+                             "Size" : "471,000 sq. ft."
+                             
+                        },
+                        "Plant_2" : {
+                             "Name":"Flint Assembly",
+                             "Location":"Flint, Michigan, US",
+                             "LatLong":"42.985,-83.717",
+                             "Environment_Rating" : "5/10",
+                             "Community_Involvement":"5/10",
+                             "Num_Employees" : "2820",
+                             "Size" : "159 acres"
+                             
+                        },
+                        "Plant_3" : {
+                             "Name":"Fort Wayne",
+                             "Location":"Roanoke, Indiana, US",
+                             "LatLong":"40.962,-85.303",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" : "3900",
+                             "Size" : "716 acres"
+                             
+                        },
+                        "Plant_4" : {
+                             "Name":"Pontiac Metal Center: Stamping",
+                             "Location":"Silao, Gto 36100, MX",
+                             "LatLong":"20.943,-101.425",
+                             "Environment_Rating" : "/10",
+                             "Community_Involvement":"/10",
+                             "Num_Employees" : "2957",
+                             "Size" : "1.2 million square feet"
+                             
+                        },
+                        "Plant_5" : {
+                             "Name":"Oshawa Truck Assembly",
+                             "Location":"Oshawa, Ontario, Canada",
+                             "LatLong":"43.872,-78.861",
+                             "Environment_Rating" : "8/10",
+                             "Community_Involvement":"8/10",
+                             "Num_Employees" : "2900",
+                             "Size" : "10 million square feet"
+                            
+                        }
+  }
+},
+{
+"Buick Enclave" : {
+  
+                        "Plant_1" : {
+                             "Name":"Warren Transmission",
+                             "Location":"Warren, Michigan, US",
+                             "LatLong":"42.462,-83.000",
+                             "Environment_Rating" : "7/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"581",
+                             "Size" : "2100000 sq feet"
+                          },
+                        "Plant_2" : {
+                             "Name":"Pontiac Metal Center",
+                             "Location":"Pontiac, Michigan, US",
+                             "LatLong":"42.466,-83.291",
+                             "Environment_Rating" : "8/10",
+                             "Community_Involvement":"7/10",
+                             "Num_Employees" :"491",
+                             "Size" : "1250000 sq feet"
+                             
+                          },
+                        "Plant_3" : {
+                             "Name":"Lansing Delta Township",
+                             "Location":"Delta Township, Michigan, US",
+                             "LatLong":"42.6913, -84.6789",
+                             "Environment_Rating" : "7/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"3486",
+                             "Size" : "3.4 million sq. ft."
+                             
+                          },
+                          "Plant_4" : {
+                             "Name":"SAIC General Motors Corporation Limited",
+                             "Location":"Shanghai, CN",
+                             "LatLong":"31.224,120.916",
+                             "Environment_Rating" : "5/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"",
+                             "Size" : ""
+                             
+                          },
+                        "Plant_5" : {
+                             "Name":"Fairfax Assembly plant",
+                             "Location":"Fairfax, KS",
+                             "LatLong":"42.466,-83.291",
+                             "Environment_Rating" : "6/10",
+                             "Community_Involvement":"2/10",
+                             "Num_Employees" :"3500",
+                             "Size" : " 4,900,000 sq. ft."
+                             
+                          }
+                       
+
+}
+}]

@@ -1,1 +1,375 @@
-hello world
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>WebGL Globe</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000 url(loading.gif) center center no-repeat;
+            color: #ffffff;
+            font-family: sans-serif;
+            font-size: 13px;
+            line-height: 20px;
+            height: 100%;
+        }
+
+        #info {
+
+            font-size: 11px;
+            position: absolute;
+            bottom: 5px;
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 3px;
+            right: 10px;
+            padding: 10px;
+
+        }
+
+        #currentInfo {
+            width: 100px;
+            position: absolute;
+            left: 20px;
+            top: 63px;
+
+            background-color: rgba(0,0,0,0.2);
+
+            /*border-top: 1px solid rgba(255,255,255,0.4);*/
+            padding: 10px;
+
+        }
+
+        a {
+            color: #aaa;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .bull {
+            padding: 0 5px;
+            color: #555;
+        }
+
+        #title {
+            position: absolute;
+            top: 10px;
+            width: 270px;
+            left: 20px;
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 3px;
+            font: 15px sans-serif;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .year {
+            font: 16px sans-serif;
+            line-height: 26px;
+            height: 75px;
+            text-align: center;
+            float: left;
+            width: 90px;
+            color: rgba(255, 255, 255, 0.4);
+
+            cursor: pointer;
+            /*-webkit-transition: all 0.1s ease-out;*/
+        }
+
+        .year:hover, .year.active {
+            font-size: 20px;
+            color: #fff;
+        }
+
+/*
+        .year:hover .dropdown-content {
+            position:absolute;
+            resize:none;
+            display: block;
+            !*left: 1000px;*!
+            top: 20px;
+            left: 100px;
+        }*/
+
+        .dropdown-content:target{
+            display:block;
+        }
+
+        .dropdown-content {
+            width:220px;
+            height:300px;
+            resize: none;
+
+            font-family: sans-serif;
+            display: none;
+            position: absolute;
+            left: 115px;
+            bottom:120px;
+            background-color: #f9f9f9;
+
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            font-size: 15px;
+            text-align:left;
+
+            border-radius: 3px;
+
+            overflow:auto;
+        }
+
+        #ce span {
+            color:white;
+            z-index:1;
+            left:110px;
+            bottom:50px;
+            position: absolute;
+            font-size:24pt;
+
+        }
+
+        #ce {
+            width: 120px;
+            height: 132px;
+            display: block;
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
+            background: url(logo.gif);
+        }
+
+        .close{
+
+            float:right;
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<div id="info">
+    <strong><a href="http://www.chromeexperiments.com/globe">WebGL Globe</a></strong> <span class="bull">&bull;</span> Created by Ethos team <span class="bull">&bull;</span> Data acquired from <a href="http://sedac.ciesin.columbia.edu/gpw/">SEDAC</a>
+</div>
+
+<a id="ce" href="https://github.com/kothuri2/Ethos">
+    <span>ETHOS</span>
+</a>
+
+<div id="currentInfo">
+
+    <a href="#placeholder1"><span id="year1990" class="year"><p>Toyota Camry</p><div id="placeholder1" class="dropdown-content">
+        <a class="close" href="#" onclick="hide('placeholder1')">X</a>
+        <p id="demo1"></p>
+    </div></span></a>
+
+
+    <a href="#placeholder2"><span id="year1995" class="year"><p>Chevrolet Corvette</p><div id="placeholder2" class="dropdown-content">
+        <a class="close" href="#" onclick="hide('placeholder2')">X</a>
+        <p id="demo2"></p>
+    </div></span></a>
+
+    <a href="#placeholder3"><span id="year2000" class="year"><p>Chevrolet Traverse</p><div id="placeholder3" class="dropdown-content">
+        <a class="close" href="#" onclick="hide('placeholder3')">X</a>
+        <p id="demo3"></p>
+    </div></span></a>
+
+    <a href="#placeholder4"><span id="year2005" class="year"><p>Cadillac ELR</p><div id="placeholder4"class="dropdown-content">
+        <a class="close" href="#" onclick="hide('placeholder4')">X</a>
+        <p id="demo4"></p>
+    </div></span></a>
+
+    <a href="#placeholder5"><span id="year2010" class="year"><p>Cadillac CTS</p><div id="placeholder5" class="dropdown-content">
+        <a class="close" href="#" onclick="hide('placeholder5')">X</a>
+        <p id="demo5"></p>
+    </div></span></a>
+
+    <a href="#placeholder6"><span id="year2015" class="year"><p>Chevrolet Cruze</p><div id="placeholder6" class="dropdown-content">
+        <a class="close" href="#" onclick="hide('placeholder6')">X</a>
+        <p id="demo6"></p>
+    </div></span></a>
+
+
+</div>
+
+<div id="title">
+    Hover over to see the visualization of the plant location for each model.
+</div>
+
+
+<script type="text/javascript" src="third-party/Detector.js"></script>
+<script type="text/javascript" src="third-party/three.min.js"></script>
+<script type="text/javascript" src="third-party/Tween.js"></script>
+<script type="text/javascript" src="globe.js"></script>
+<script type="text/javascript" src="Plants.json"></script>
+<script type="text/javascript">
+    function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function() {
+            if (rawFile.readyState === 4 && rawFile.status == "200") {
+                callback(rawFile.responseText);
+            }
+        }
+        rawFile.send(null);
+    }
+
+    //usage:
+    readTextFile("/Ethos/globe/globe/Plants.json", function(text){
+        var data = JSON.parse(text);
+        //console.log(data[0]['Toyota Camry'][0]["Plant_1"]["Name"]);
+        //console.log(data.length);
+        // function myFunction(data) {
+        var out = "";
+        var i;
+        var counter=1;
+        for(i = 0; i<6; i++) {
+            for(var model in data[i]){
+
+                //for(j = 0; j < data[i][model].length; j++) {
+
+                console.log(model);
+                console.log(data[i][model])
+                //console.log(data[i][model].length)
+
+                for (var plant in data[i][model]) {
+
+                    out += '<br>' +
+                            "Name: " + data[i][model][plant]["Name"] + '</br>' + '<br>' + "Location: " +
+                            data[i][model][plant]["Location"] + '</br>' + '<br>' + "Environment_Rating: " +
+                            data[i][model][plant]["Environment_Rating"] + '</br>' + '<br>' + "Community_Involvement: " +
+                            data[i][model][plant]["Community_Involvement"] + '</br>' + '<br>' + "Num_Employees: " +
+                            data[i][model][plant]["Num_Employees"] + '</br>' + '<br>' + "Size: " +
+                            data[i][model][plant]["Size"] + '</br>'+'</br>';
+
+
+                }
+                document.getElementById("demo"+(counter++)).innerHTML = out;
+                out="";
+                // }
+
+
+            }
+            var place="demo"+(i+1);
+            console.log(place);
+            //document.getElementById(place).innerHTML = out;
+        }
+        //console.log(data[i][model].length);
+        //console.log(out);
+
+
+        //}
+        //var test="";
+        //for(i=0;i<)
+        //document.getElementById("demo").innerHTML=data[0]['Toyota Camry'][0]["Plant_1"]["Name"];
+
+    });
+
+
+    if(!Detector.webgl){
+        Detector.addGetWebGLMessage();
+    } else {
+
+        var years = ['1990','1995','2000','2005','2010','2015'];
+        var container = document.getElementById('container');
+        var globe = new DAT.Globe(container);
+
+        console.log(globe);
+        var i, tweens = [];
+
+        var settime = function(globe, t) {
+            return function() {
+                new TWEEN.Tween(globe).to({time: t/years.length},500).easing(TWEEN.Easing.Cubic.EaseOut).start();
+                var y = document.getElementById('year'+years[t]);
+                if (y.getAttribute('class') === 'year active') {
+                    return;
+                }
+                var yy = document.getElementsByClassName('year');
+                for(i=0; i<yy.length; i++) {
+                    yy[i].setAttribute('class','year');
+                }
+                y.setAttribute('class', 'year active');
+            };
+        };
+
+        for(var i = 0; i<years.length; i++) {
+            var y = document.getElementById('year'+years[i]);
+            y.addEventListener('mouseover', settime(globe,i), false);
+        }
+
+        var xhr;
+        TWEEN.start();
+
+
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', 'plantlocation.json', true);
+        xhr.onreadystatechange = function(e) {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    window.data = data;
+                    for (i=0;i<data.length;i++) {
+                        globe.addData(data[i][1], {format: 'magnitude', name: data[i][0], animated: true});
+                    }
+                    globe.createPoints();
+                    settime(globe,0)();
+                    globe.animate();
+                    document.body.style.backgroundImage = 'none'; // remove loading
+                }
+            }
+        };
+        xhr.send(null);
+
+
+    }
+
+    /*
+    var xhReq = new XMLHttpRequest();
+    xhReq.open("GET", 'plantlocation.json', true);
+    xhReq.send(null);
+    var jsonObject = JSON.parse(xhReq.responseText);
+
+    document.getElementById("placeholder").innerHTML="Name: "+jsonObject[0]+"</br>"+"Name: " +jsonObject[0].Plant_2.Name;
+    */
+</script>
+
+<script type="text/javascript">
+/*    $(currentInfo).ready(function () {
+        $('year').hover (function () {
+            $('dropdown-content').removeClass('hover');
+            $(this).addClass('hover');
+        });
+    })*/
+
+//    $(".show").click(function () {
+//        $('#placeholder').eq(0).show();
+//    });
+//
+//    $('.hide').click(function () {
+//        $('#dropdown-content').eq(0).hide();
+//    });
+
+
+</script>
+<script>
+    var something = document.getElementById('placeholder');
+    something.style.cursor = 'pointer';
+    something.onclick = function () {
+        this.style.backgroundColor = 'white';
+
+    };
+</script>
+</body>
+
+</html>
