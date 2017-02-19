@@ -38,6 +38,7 @@ $(_id).submit(function(event){
         // Log a message to the console
         console.log("Hooray, it worked!");
         for(child in _children){
+          console.log(child);
           $(child).val('');
         }
     });
