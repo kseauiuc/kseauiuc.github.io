@@ -2,7 +2,7 @@
 var ticking = false;
 var isFirefox = (/Firefox/i.test(navigator.userAgent));
 var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
-var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
+var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive)
 var slideDurationSetting = 600; //Amount of time for which slide is "locked"
 var currentSlideNumber = 0;
 var totalSlideNumber = $(".background").length;
@@ -41,6 +41,26 @@ function parallaxScroll(evt) {
     }
   }
 }
+// ------------- MOBILE COMPATIBILITY --------------------------------- //
+$(window).touchwipe({
+  wipeUp: function() {
+    //Down scroll
+    ticking = true;
+    if (currentSlideNumber !== totalSlideNumber - 1) {
+      currentSlideNumber++;
+      nextItem();
+    }
+    slideDurationTimeout(slideDurationSetting);
+  },
+  wipeDown: function() {
+    ticking = true;
+    if (currentSlideNumber !== 0) {
+      currentSlideNumber--;
+    }
+    previousItem();
+    slideDurationTimeout(slideDurationSetting);
+  }
+});
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
@@ -65,13 +85,13 @@ function previousItem() {
 }
 
 $(function() {
-  
+
   $(".menu-link").click(function(e) {
     e.preventDefault();
-    
+
     $(".menu-overlay").toggleClass("open");
     $(".menu").toggleClass("open");
 
   });
-	
+
 });
