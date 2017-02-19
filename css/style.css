@@ -901,9 +901,10 @@ p1{
   font-family: "Roboto", Arial, serif;
 }
 
+flex-basis: <width>
 .sponsors-logo {
   display: flex; 
-  flex-basis: <length> 0; 
+  flex-basis: 300; 
   flex-flow: row wrap;
   justify-content: space-between;
 }
