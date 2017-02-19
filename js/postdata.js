@@ -37,6 +37,8 @@ $(_id).submit(function(event){
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         console.log("Hooray, it worked!");
+        $(_id + ' input').val('');
+        $(_id + ' textarea').val('');
     });
 
     // Callback handler that will be called on failure
