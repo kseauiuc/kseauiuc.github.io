@@ -60,6 +60,10 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<link href='fullcalendar-3.2.0/fullcalendar.min.css' rel='stylesheet' />
+	<link href='fullcalendar-3.2.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+
 	<style>
 
 	/*body {
@@ -70,13 +74,13 @@
 	}*/
 
 	#calendar {
+		padding-bottom: 100px;
 		max-width: 900px;
+		max-height: 900px;
 		margin: 0 auto;
 	}
 
 	</style>
-
-
 
 	</head>
 	<body>
@@ -116,15 +120,15 @@
 		<div class="container">
 			<div class="heading-section text-center">
 				<h2 class="hvr-hang">Calendar</h2>
-				<div id='calendar'></div>
 			</div>
+			<div id='calendar'></div>
 		</div>
 
 		<div class="container">
 			<div class="heading-section text-center">
 				<h2 class="hvr-hang">Gallery</h2>
-				<p>event pics here</p>
 			</div>
+			<p>event pics here</p>
 		</div>
 
 	</div>
@@ -162,9 +166,6 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
-	<meta charset='utf-8' />
-	<link href='fullcalendar-3.2.0/fullcalendar.min.css' rel='stylesheet' />
-	<link href='fullcalendar-3.2.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
 	<script src='fullcalendar-3.2.0/lib/moment.min.js'></script>
 	<script src='fullcalendar-3.2.0/fullcalendar.min.js'></script>
 
@@ -172,6 +173,12 @@
 
 	$(document).ready(function() {
 	    $('#calendar').fullCalendar({
+	/*
+		header: {
+		    left: 'prev,next',
+		    center: 'title',
+		    right: 'today'
+		},*/
 		googleCalendarApiKey: 'AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc',
 		events: {
 		    googleCalendarId: 'kvrb00gbgooeeeel3agpmescuo@group.calendar.google.com',
