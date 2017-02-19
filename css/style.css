@@ -903,7 +903,7 @@ p1{
 
 .sponsors-logo {
   display: flex; 
-  flex-basis: 300 auto; 
+  flex-basis: <length> 0; 
   flex-flow: row wrap;
   justify-content: space-between;
 }
