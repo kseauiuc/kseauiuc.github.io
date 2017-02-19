@@ -900,4 +900,8 @@ p1{
   font-weight: 300;
   font-family: "Roboto", Arial, serif;
 }
+
+.sponsors-logo {
+  display: flex;	
+}
 /*# sourceMappingURL=style.css.map */
