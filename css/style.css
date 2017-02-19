@@ -904,8 +904,9 @@ p1{
 .sponsors-logo {
   display: flex; 
   flex-direction: column;
+  height: 500;
+  width: 900;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding:30px;
 }
 /*# sourceMappingURL=style.css.map */
