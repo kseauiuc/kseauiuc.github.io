@@ -3,7 +3,7 @@ function postData(_id,_url){
 var request;
 
 // Bind to the submit event of our form
-$(_id.form).submit(function(event){
+$(_id).submit(function(event){
 
     // Prevent default posting of form - put here to work in case of errors
     event.preventDefault();
@@ -37,9 +37,6 @@ $(_id.form).submit(function(event){
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         console.log("Hooray, it worked!");
-        /*_id.children.forEach(function(child){
-          $(child).val('');
-        });*/
     });
 
     // Callback handler that will be called on failure
