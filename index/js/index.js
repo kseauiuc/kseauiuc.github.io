@@ -42,24 +42,20 @@ function parallaxScroll(evt) {
   }
 }
 // ------------- MOBILE COMPATIBILITY --------------------------------- //
-$(window).touchwipe({
-  wipeUp: function() {
-    //Down scroll
-    ticking = true;
-    if (currentSlideNumber !== totalSlideNumber - 1) {
-      currentSlideNumber++;
-      nextItem();
-    }
-    slideDurationTimeout(slideDurationSetting);
-  },
-  wipeDown: function() {
-    ticking = true;
-    if (currentSlideNumber !== 0) {
-      currentSlideNumber--;
-    }
-    previousItem();
-    slideDurationTimeout(slideDurationSetting);
+$(window).on('swipeup',function(){
+  ticking = true;
+  if (currentSlideNumber !== totalSlideNumber - 1) {
+    currentSlideNumber++;
+    nextItem();
   }
+  slideDurationTimeout(slideDurationSetting);
+}).on('swipedown',function(){
+  ticking = true;
+  if (currentSlideNumber !== 0) {
+    currentSlideNumber--;
+  }
+  previousItem();
+  slideDurationTimeout(slideDurationSetting);
 });
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
