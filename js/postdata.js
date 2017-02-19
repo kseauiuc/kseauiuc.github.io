@@ -37,9 +37,9 @@ $(_id.form).submit(function(event){
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         console.log("Hooray, it worked!");
-        _id.children.forEach(function(child){
+        /*_id.children.forEach(function(child){
           $(child).val('');
-        });
+        });*/
     });
 
     // Callback handler that will be called on failure
