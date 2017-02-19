@@ -110,26 +110,28 @@
 				</div>
 				<div class="col-md-8 animate-box">
 					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Name">
+						<form id="contact-form">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="NAME" id="contact-name" class="form-control" placeholder="Name">
+								</div>
 							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Email">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="EMAIL" id="contact-address" class="form-control" placeholder="Email">
+								</div>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+							<div class="col-md-12">
+								<div class="form-group">
+									<textarea name="MESSAGE" id="contact-context" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<input type="submit" value="Send Message" class="btn btn-primary">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="submit" value="Send Message" class="btn btn-primary">
+								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -170,5 +172,9 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
+	<script src="js/postdata.js"></script>
+	<script>
+	postData('contact-form','https://script.google.com/macros/s/AKfycbxMnqC4qQKASDs0f1lfdKTuZz-Jn6oWpaGwwYFL-8q9eRs8fLut/exec');
+	</script>
 	</body>
 </html>
