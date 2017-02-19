@@ -39,7 +39,7 @@ $(_id).submit(function(event){
         console.log("Hooray, it worked!");
         for(child in _children){
           console.log(child);
-          $(child).val('');
+          $(_children[child]).val('');
         }
     });
 
