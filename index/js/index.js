@@ -41,22 +41,6 @@ function parallaxScroll(evt) {
     }
   }
 }
-// ------------- MOBILE COMPATIBILITY --------------------------------- //
-$(window).on('swipeup',function(){
-  ticking = true;
-  if (currentSlideNumber !== totalSlideNumber - 1) {
-    currentSlideNumber++;
-    nextItem();
-  }
-  slideDurationTimeout(slideDurationSetting);
-}).on('swipedown',function(){
-  ticking = true;
-  if (currentSlideNumber !== 0) {
-    currentSlideNumber--;
-  }
-  previousItem();
-  slideDurationTimeout(slideDurationSetting);
-});
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
