@@ -41,6 +41,7 @@ function parallaxScroll(evt) {
     }
   }
 }
+// ------------- MOBILE COMPATIBILITY --------------------------------- //
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
@@ -52,6 +53,21 @@ function slideDurationTimeout(slideDuration) {
 // ------------- ADD EVENT LISTENER ------------- //
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+$(window).on('swipeup',function(){
+  ticking = true;
+  if (currentSlideNumber !== totalSlideNumber - 1) {
+    currentSlideNumber++;
+    nextItem();
+  }
+  slideDurationTimeout(slideDurationSetting);
+}).on('swipedown',function(){
+  ticking = true;
+  if (currentSlideNumber !== 0) {
+    currentSlideNumber--;
+  }
+  previousItem();
+  slideDurationTimeout(slideDurationSetting);
+});
 
 // ------------- SLIDE MOTION ------------- //
 function nextItem() {
