@@ -902,6 +902,8 @@ p1{
 }
 
 .sponsors-logo {
-  display: flex;	
+  display: flex; 
+  width: 300px; 
+  height: 300px; 
 }
 /*# sourceMappingURL=style.css.map */
