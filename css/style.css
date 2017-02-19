@@ -905,6 +905,7 @@ p1{
 .sponsors-logo {
   display: flex;  
   flex-flow: row wrap;
-  align-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 /*# sourceMappingURL=style.css.map */
