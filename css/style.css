@@ -905,7 +905,7 @@ p1{
   display: flex; 
   width: 900px; 
   height: 500px;
+  flex-flow: row wrap;
   justify-content: space-between | space-around;
-  flex-wrap: nowrap | wrap | wrap-reverse;
 }
 /*# sourceMappingURL=style.css.map */
