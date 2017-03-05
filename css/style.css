@@ -904,8 +904,8 @@ p1{
 .sponsors-logo {
   display: flex;  
   flex-direction: row-reverse;
-  /*height: 500;
-  width: 900;*/
+  height: 500;
+  width: 900;
   flex-flow: wrap;
   justify-content: space-around;
   align-content: space-around;
