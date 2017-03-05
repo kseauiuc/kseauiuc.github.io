@@ -903,10 +903,13 @@ p1{
 
 .sponsors-logo {
   display: flex;  
+  flex-direction: row-reverse;
   /*height: 500;
   width: 900;*/
-  flex-flow: row wrap;
+  flex-flow: wrap;
   justify-content: space-around;
+  align-content: space-around;
+  
   /*align-items: center;*/
 }
 /*# sourceMappingURL=style.css.map */
