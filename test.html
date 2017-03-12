@@ -21,11 +21,17 @@ function myFunction(xml) {
 
     for(var j=0, k=contents.length; j<k; j++){
 
-
+//parse title
     document.getElementById("demo").innerHTML += 
-    xmlDoc.getElementsByTagName("content")[j].childNodes[0].nodeValue;
+    xmlDoc.getElementsByTagName("title")[j+1].childNodes[0].nodeValue;
+
+
+//parse body 
+    document.getElementById("demo").innerHTML += 
+    xmlDoc.getElementsByTagName("content")[j+1].childNodes[0].nodeValue;
 
 }
+
 }
 </script>
 
