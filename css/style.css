@@ -909,3 +909,7 @@ p1{
   flex-wrap: nowrap | wrap | wrap-reverse;
 }
 /*# sourceMappingURL=style.css.map */
+
+.sponsors-img {
+  height: 200px;
+}
