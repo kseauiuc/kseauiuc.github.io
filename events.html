@@ -60,6 +60,10 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+	<link href='fullcalendar-3.2.0/fullcalendar.min.css' rel='stylesheet' />
+	<link href='fullcalendar-3.2.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+
 	<style>
 
 	/*body {
@@ -70,13 +74,14 @@
 	}*/
 
 	#calendar {
+		padding-bottom: 100px;
 		max-width: 900px;
+		max-height: 900px;
 		margin: 0 auto;
+		font-size: 14px;
 	}
 
 	</style>
-
-
 
 	</head>
 	<body>
@@ -91,6 +96,15 @@
 				<ul>
 					<li><a href="about.html">About</a></li>
 					<li><a href="events.html" class="active">Events</a></li>
+						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    						Dropdown
+    						<span class="caret"></span>
+  						</button>
+  						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    						<li><a href="#">Blog</a></li>
+    						<li><a href="#">Gallery</a></li>
+    						<li><a href="#">Calendar</a></li>
+  						</ul>
 					<li><a href="joinus.html">Join Us</a></li>
 					<li><a href="sponsors.html">Sponsors</a></li>				
 					<li><a href="contact.html">Contact</a></li>
@@ -106,6 +120,7 @@
 					<div class="fh5co-intro fh5co-table-cell">
 						<h1 class="text-center">Events</h1>
 						<p>upcoming events and past events</p>
+						
 					</div>
 				</div>
 			</div>
@@ -116,15 +131,15 @@
 		<div class="container">
 			<div class="heading-section text-center">
 				<h2 class="hvr-hang">Calendar</h2>
-				<div id='calendar'></div>
 			</div>
+			<div id='calendar'></div>
 		</div>
 
 		<div class="container">
 			<div class="heading-section text-center">
 				<h2 class="hvr-hang">Gallery</h2>
-				<p>event pics here</p>
 			</div>
+			<p>event pics here</p>
 		</div>
 
 	</div>
@@ -136,9 +151,8 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<p>copyright KSEA 2016</p>
 						<p class="fh5co-social-icons">
-							<a href="#"><i class="icon-twitter-with-circle"></i></a>
-							<a href="#"><i class="icon-facebook-with-circle"></i></a>
-							<a href="#"><i class="icon-instagram-with-circle"></i></a>
+							<a href="https://www.facebook.com/KSEA.IllinoisYG/?hc_ref=SEARCH"><i class="icon-facebook-with-circle"></i></a>
+							<a href="https://www.instagram.com/ksea_uiuc/"><i class="icon-instagram-with-circle"></i></a>
 						</p>
 					</div>
 				</div>
@@ -162,9 +176,6 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
-	<meta charset='utf-8' />
-	<link href='fullcalendar-3.2.0/fullcalendar.min.css' rel='stylesheet' />
-	<link href='fullcalendar-3.2.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
 	<script src='fullcalendar-3.2.0/lib/moment.min.js'></script>
 	<script src='fullcalendar-3.2.0/fullcalendar.min.js'></script>
 
@@ -172,9 +183,16 @@
 
 	$(document).ready(function() {
 	    $('#calendar').fullCalendar({
+	/*
+		header: {
+		    left: 'prev,next',
+		    center: 'title',
+		    right: 'today'
+		},*/
 		googleCalendarApiKey: 'AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc',
 		events: {
-		    googleCalendarId: 'ksea_uiuc.web@gmail.com'
+		    googleCalendarId: 'kvrb00gbgooeeeel3agpmescuo@group.calendar.google.com',
+		    color: 'orange'
 		}
 	    });
 	});
