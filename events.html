@@ -53,6 +53,8 @@
 	
 	<link href="css/hover.css" rel="stylesheet" media="all">
 
+	<link rel="stylesheet" href="css/dropdown.css">
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -65,13 +67,6 @@
 
 
 	<style>
-
-	/*body {
-		margin: 40px 10px;
-		padding: 0;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-		font-size: 14px;
-	}*/
 
 	#calendar {
 		padding-bottom: 100px;
@@ -95,16 +90,16 @@
 			<nav id="fh5co-main-nav" role="navigation">
 				<ul>
 					<li><a href="about.html">About</a></li>
-					<li><a href="events.html" class="active">Events</a></li>
-						<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    						Dropdown
-    						<span class="caret"></span>
-  						</button>
-  						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    						<li><a href="#">Blog</a></li>
-    						<li><a href="#">Gallery</a></li>
-    						<li><a href="#">Calendar</a></li>
-  						</ul>
+					<li>
+						<div class="dropdown">
+							<a href="events.html" class="active dropbtn">Events</a>
+							<div class="dropdown-content">
+						    	<a href="#">Blog</a>
+						    	<a href="#">Gallery</a>
+						    	<a href="#">Calendar</a>
+						  	</div>
+						</div>
+					</li>
 					<li><a href="joinus.html">Join Us</a></li>
 					<li><a href="sponsors.html">Sponsors</a></li>				
 					<li><a href="contact.html">Contact</a></li>

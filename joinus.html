@@ -53,6 +53,8 @@
 	
 	<link href="css/hover.css" rel="stylesheet" media="all">
 
+	<link rel="stylesheet" href="css/dropdown.css">
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -74,7 +76,16 @@
 			<nav id="fh5co-main-nav" role="navigation">
 				<ul>
 					<li><a href="about.html">About</a></li>
-					<li><a href="events.html">Events</a></li>
+					<li>
+						<div class="dropdown">
+							<a href="events.html" class="dropbtn">Events</a>
+							<div class="dropdown-content">
+						    	<a href="#">Blog</a>
+						    	<a href="#">Gallery</a>
+						    	<a href="#">Calendar</a>
+						  	</div>
+						</div>
+					</li>
 					<li><a href="joinus.html" class="active">Join Us</a></li>
 					<li><a href="sponsors.html">Sponsors</a></li>
 					<li><a href="contact.html">Contact</a></li>
