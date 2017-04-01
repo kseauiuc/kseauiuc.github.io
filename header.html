@@ -25,3 +25,19 @@
 			</nav>
 		</div>
 	</header>
+    <script>
+		var url = window.location.pathname;
+		var filename = url.substring(url.lastIndexOf('/')+1);
+		switch (filename){
+            case "about.html":
+                $('.header.about').addClass('active');
+            case "events.html":
+                $('.header.events').addClass('active');
+            case "joinus.html":
+                $('.header.joinus').addClass('active');
+            case "sponsors.html":
+                $('.header.sponsors').addClass('active');
+            case "contact.html":
+                $('.header.contact').addClass('active');
+        }
+    </script>
