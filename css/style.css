@@ -917,6 +917,11 @@ p1{
   height: 200px;
 }
 
+#calendars .heading-section {
+  margin-bottom : 0;
+  margin-top : 1em;
+}
+
 #picture-list {
   display:flex;
   flex-wrap: wrap;
