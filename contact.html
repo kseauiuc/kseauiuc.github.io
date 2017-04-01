@@ -66,33 +66,9 @@
 
 	</head>
 	<body>
-	<header>
-		<div class="container text-center">
-			<div class="fh5co-navbar-brand">
-			<a href="index.html">
-				<img src="https://raw.githubusercontent.com/junniejune/ksea_uiuc/master/mdl-template-android-dot-com/images/KakaoTalk_20161027_171338566.png"  class="img-responsive" alt="Responsive image" width="250" height="250" align="center">
-			</a>
-			</div>
-			<nav id="fh5co-main-nav" role="navigation">
-				<ul>
-					<li><a href="about.html">About</a></li>
-					<li>
-						<div class="dropdown">
-							<a href="events.html" class="dropbtn">Events</a>
-							<div class="dropdown-content">
-						    	<a href="#">Blog</a>
-						    	<a href="#">Gallery</a>
-						    	<a href="#">Calendar</a>
-						  	</div>
-						</div>
-					</li>
-					<li><a href="joinus.html">Join Us</a></li>
-					<li><a href="sponsors.html">Sponsors</a></li>
-					<li><a href="contact.html" class="active">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+		
+	<div w3-include-html="header.html"></div>
+
 	<div class="fh5co-parallax" style="background-image: url(images/hero-1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -186,5 +162,44 @@
 	<script>
 		postData('#contact-form',{name:'#contact-name',addr:'#contact-address',context:'#contact-context'},'https://script.google.com/macros/s/AKfycbxMnqC4qQKASDs0f1lfdKTuZz-Jn6oWpaGwwYFL-8q9eRs8fLut/exec');
 	</script>
+	
+	<script src="js/w3data.js"></script>
+
+	<script>
+		w3IncludeHTML();
+	</script>
+	
+    <script>
+		$(document).ready(function(){
+			addActive();
+		});
+		function addActive(){
+			if($('header').is(':visible')){
+				var url = window.location.pathname;
+				var filename = url.substring(url.lastIndexOf('/')+1);
+				console.log(filename);
+				switch (filename){
+					case 'about.html':
+						$('.header.about').addClass('active');
+						break;
+					case "events.html":
+						$('.header.events').addClass('active');
+						break;
+					case "joinus.html":
+						$('.header.joinus').addClass('active');
+						break;
+					case "sponsors.html":
+						$('.header.sponsors').addClass('active');
+						break;
+					case "contact.html":
+						$('.header.contact').addClass('active');
+						break;
+				}
+			}
+			else {
+				setTimeout(addActive,50);
+			}
+		}
+    </script>
 	</body>
 </html>
