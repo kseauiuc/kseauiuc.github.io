@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -24,14 +25,11 @@ $.get('https://www.googleapis.com/blogger/v3/blogs/7901125432127081896/posts?key
     for (var j = 0; j < content_list.length; j++) {
         temp_img = new Image();
         temp_img.setAttribute('src',content_list[j].img.getAttribute('src'));
-        temp_img.setAttribute('width','200');
-        temp_img.setAttribute('height','150');
         temp_img.setAttribute('data-toggle','modal');
         temp_img.setAttribute('data-target','#myModal');
-        temp_img.setAttribute('id','modal-btn');
         temp_img.setAttribute('style','cursor: pointer;')
         temp_img.setAttribute('value',j);
-        temp_img.setAttribute('class','modal-btn-class')
+        temp_img.setAttribute('class','modal-btn-class gallery-images');
         img_list.push(temp_img);
     }
     $('#picture-list').html(img_list);

@@ -916,3 +916,13 @@ p1{
 .sponsor-img {
   height: 200px;
 }
+
+#picture-list {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.gallery-images {
+  height: 200px;
+  margin-bottom:5px;
+}

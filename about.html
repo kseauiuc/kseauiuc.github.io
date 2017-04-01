@@ -62,37 +62,11 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 	
-
-
 	</head>
 	<body>
-	<header>
-		<div class="container text-center">
-			<div class="fh5co-navbar-brand">
-			<a href="index.html">
-				<img src="https://raw.githubusercontent.com/junniejune/ksea_uiuc/master/mdl-template-android-dot-com/images/KakaoTalk_20161027_171338566.png"  class="img-responsive" alt="Responsive image" width="250" height="250" align="center">
-			</a>
-			</div>
-			<nav id="fh5co-main-nav" role="navigation">
-				<ul>
-					<li><a href="about.html" class="active">About</a></li>
-					<li>
-						<div class="dropdown">
-							<a href="events.html" class="dropbtn">Events</a>
-							<div class="dropdown-content">
-						    	<a href="#">Blog</a>
-						    	<a href="#">Gallery</a>
-						    	<a href="#">Calendar</a>
-						  	</div>
-						</div>
-					</li>
-					<li><a href="joinus.html">Join Us</a></li>
-					<li><a href="sponsors.html">Sponsors</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+		
+	<div w3-include-html="header.html"></div>
+
 	<div class="fh5co-parallax" style="background-image: url(images/hero-1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -251,6 +225,12 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
+	<script src="js/w3data.js"></script>
+
+	<script>
+		w3IncludeHTML();
+		$('.header.about').addClass('active');
+	</script>
 	</body>
 </html>
 
