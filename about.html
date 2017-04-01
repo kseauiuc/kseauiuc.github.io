@@ -232,26 +232,36 @@
 	</script>
 	
     <script>
-		var url = window.location.pathname;
-		var filename = url.substring(url.lastIndexOf('/')+1);
-        console.log(filename);
-		switch (filename){
-            case 'about.html':
-                $('.header.about').addClass('active');
-                break;
-            case "events.html":
-                $('.header.events').addClass('active');
-                break;
-            case "joinus.html":
-                $('.header.joinus').addClass('active');
-                break;
-            case "sponsors.html":
-                $('.header.sponsors').addClass('active');
-                break;
-            case "contact.html":
-                $('.header.contact').addClass('active');
-                break;
-        }
+		$(document).ready(function(){
+			addActive();
+		});
+		function addActive(){
+			if($('header').is(':visible')){
+				var url = window.location.pathname;
+				var filename = url.substring(url.lastIndexOf('/')+1);
+				console.log(filename);
+				switch (filename){
+					case 'about.html':
+						$('.header.about').addClass('active');
+						break;
+					case "events.html":
+						$('.header.events').addClass('active');
+						break;
+					case "joinus.html":
+						$('.header.joinus').addClass('active');
+						break;
+					case "sponsors.html":
+						$('.header.sponsors').addClass('active');
+						break;
+					case "contact.html":
+						$('.header.contact').addClass('active');
+						break;
+				}
+			}
+			else {
+				setTimeout(addActive,50);
+			}
+		}
     </script>
 	</body>
 </html>
