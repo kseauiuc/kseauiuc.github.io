@@ -228,8 +228,9 @@
 	<script src="js/w3data.js"></script>
 
 	<script>
-		w3IncludeHTML();
-		$('.header.about').addClass('active');
+		w3IncludeHTML().then(function(){
+			$('.header.about').addClass('active');
+		});
 	</script>
 	</body>
 </html>
