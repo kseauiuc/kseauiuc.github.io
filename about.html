@@ -228,9 +228,10 @@
 	<script src="js/w3data.js"></script>
 
 	<script>
-		w3IncludeHTML().then(function(){
-			$('.header.about').addClass('active');
-		});
+		w3IncludeHTML();
+		var url = window.location.pathname;
+		var filename = url.substring(url.lastIndexOf('/')+1);
+		alert(filename);
 	</script>
 	</body>
 </html>
