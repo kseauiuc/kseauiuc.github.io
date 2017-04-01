@@ -28,8 +28,9 @@
     <script>
 		var url = window.location.pathname;
 		var filename = url.substring(url.lastIndexOf('/')+1);
+        console.log(filename);
 		switch (filename){
-            case "about.html":
+            case 'about.html':
                 $('.header.about').addClass('active');
                 break;
             case "events.html":
