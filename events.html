@@ -101,6 +101,20 @@
 	}
     </style>
 
+    <style>
+    h4 {
+    	padding: 5px;
+    	padding-top: 15px;
+    	line-height: 0;
+    	font-size: 20px;
+    }
+    #blog-content-text {
+    	line-height: 0;
+    	font-size: 16px;
+    	color: #727272;
+    }
+    </style>
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -203,6 +217,7 @@
 		
 	<script>
 	var content_list = [];
+	var max_text_length = 40;
 	$.get('https://www.googleapis.com/blogger/v3/blogs/7901125432127081896/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
 		var posts = data.items;
 		for (var i = 0; i < posts.length; i++) {
@@ -245,10 +260,7 @@
 		}
 
 	    for (var j = 0; j < content_list_blog.length; j++) {
-	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img style="width:30%; float:left; padding:5px" id="card-img" aligh="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:70%"><h4><b>' + content_list_blog[j].title + '</b></h4><p>' + $(content_list_blog[j].content).text() + '</p></div></div>';
-
-	    	img_obj = $(newHTML).find('#card-img')
-	    	//text_obj = $(newHTML).find('#')
+	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img style="width:30%; float:left; padding:5px" id="card-img" align="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:70%"><h4><b>' + content_list_blog[j].title + '</b></h4><div id="blog-content-text">' + $(content_list_blog[j].content).text().replace(/(?:\r\n|\r|\n)/g, '').substring(0, max_text_length) + '</div></div></div>';
 
 	        $(".card-list").append(newHTML);
 	    }
