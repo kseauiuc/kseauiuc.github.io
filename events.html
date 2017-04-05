@@ -233,6 +233,7 @@
 	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img style="width:30%; float:left; padding:5px" id="card-img" aligh="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:70%"><h4><b>' + content_list_blog[j].title + '</b></h4><p>' + $(content_list_blog[j].content).text() + '</p></div></div>';
 
 	    	img_obj = $(newHTML).find('#card-img')
+	    	//text_obj = $(newHTML).find('#')
 
 	        $(".card-list").append(newHTML);
 	    }
