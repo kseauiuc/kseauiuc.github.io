@@ -93,6 +93,13 @@
 	.container {
 	    /*padding: 2px 16px;*/
 	}
+
+	#card-img {
+		width: 30%;
+		float: left;
+		/*padding: 5px*/
+		padding-right: 10px;
+	}
     </style>
 
     <style>
@@ -103,15 +110,21 @@
 
     <style>
     h4 {
-    	padding: 5px;
+    	padding-left: 5px;
+    	padding-right: 5px;
     	padding-top: 15px;
     	line-height: 0;
     	font-size: 20px;
     }
     #blog-content-text {
-    	line-height: 0;
+    	line-height: 1;
     	font-size: 16px;
     	color: #727272;
+    	height: 32px;
+    	display: block;
+    	white-space: normal;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
     }
     </style>
 
@@ -217,7 +230,6 @@
 		
 	<script>
 	var content_list = [];
-	var max_text_length = 40;
 	$.get('https://www.googleapis.com/blogger/v3/blogs/7901125432127081896/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
 		var posts = data.items;
 		for (var i = 0; i < posts.length; i++) {
@@ -250,6 +262,7 @@
 
 	<script>
 	var content_list_blog = [];
+	var max_text_length = 40;
 	$.get('https://www.googleapis.com/blogger/v3/blogs/6054478386078998841/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
 		var posts_blog = data.items;
 		for (var i = 0; i < posts_blog.length; i++) {
@@ -260,7 +273,7 @@
 		}
 
 	    for (var j = 0; j < content_list_blog.length; j++) {
-	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img style="width:30%; float:left; padding:5px" id="card-img" align="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:70%"><h4><b>' + content_list_blog[j].title + '</b></h4><div id="blog-content-text">' + $(content_list_blog[j].content).text().replace(/(?:\r\n|\r|\n)/g, '').substring(0, max_text_length) + '</div></div></div>';
+	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img  id="card-img" align="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:100%"><h4><b>' + content_list_blog[j].title + '</b></h4><div id="blog-content-text">' + $(content_list_blog[j].content).text().replace(/(?:\r\n|\r|\n)/g, '') + '</div></div></div>';
 
 	        $(".card-list").append(newHTML);
 	    }
@@ -268,7 +281,7 @@
 	    $('.card').click(function() {
 	        $("#blog-title").html(content_list_blog[this.getAttribute('value')].title);
 	        $("#blog-body").html(content_list_blog[this.getAttribute('value')].content);
-		})
+		})		
 	});
 	</script>
 

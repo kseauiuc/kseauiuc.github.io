@@ -93,12 +93,39 @@
 	.container {
 	    /*padding: 2px 16px;*/
 	}
+
+	#card-img {
+		width: 30%;
+		float: left;
+		/*padding: 5px*/
+		padding-right: 10px;
+	}
     </style>
 
     <style>
     .heading-section {
 		margin-bottom: 1em;
 	}
+    </style>
+
+    <style>
+    h4 {
+    	padding-left: 5px;
+    	padding-right: 5px;
+    	padding-top: 15px;
+    	line-height: 0;
+    	font-size: 20px;
+    }
+    #blog-content-text {
+    	line-height: 1;
+    	font-size: 16px;
+    	color: #727272;
+    	height: 32px;
+    	display: block;
+    	white-space: normal;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    }
     </style>
 
 	<!-- Modernizr JS -->
@@ -200,7 +227,7 @@
 		$(".card-list").html("");
 		$(".page-btn-list").html("");
 		for (var j = page_num*post_per_page; j < content_list_blog.length && j < (page_num+1)*post_per_page; j++) {
-	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img style="width:30%; float:left; padding:5px" id="card-img" aligh="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:70%"><h4><b>' + content_list_blog[j].title + '</b></h4><p>' + $(content_list_blog[j].content).text() + '</p></div></div>';
+	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img  id="card-img" align="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:100%"><h4><b>' + content_list_blog[j].title + '</b></h4><div id="blog-content-text">' + $(content_list_blog[j].content).text().replace(/(?:\r\n|\r|\n)/g, '') + '</div></div></div>';
 
 	        $('.card-list').append(newHTML);
 	    }
