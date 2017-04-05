@@ -122,8 +122,8 @@
 		$(window).stellar({
 			horizontalScrolling: false,
 			hideDistantElements: false, 
-			responsive: true,
-			verticalOffset: 0
+			responsive: true
+
 		});
 	};
 	
