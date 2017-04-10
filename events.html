@@ -236,9 +236,14 @@
 	$.get('https://www.googleapis.com/blogger/v3/blogs/7901125432127081896/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
 		var posts = data.items;
 		for (var i = 0; i < posts.length; i++) {
+			main_img = null;
 			post_title = posts[i].title;             // post title
-			post_content = posts[i].content;         // post content
+			post_content = '<div>' + posts[i].content + '</div>';         // post content
 			main_img = $('img',post_content).get(0); // main image
+			if (main_img == null) {
+				main_img = new Image();
+				main_img.setAttribute('src','images/about.jpg');
+			}
 			content_list.push({title: post_title, content: post_content, img: main_img});
 		}
 		var img_list = [];
@@ -269,9 +274,14 @@
 	$.get('https://www.googleapis.com/blogger/v3/blogs/6054478386078998841/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
 		var posts_blog = data.items;
 		for (var i = 0; i < posts_blog.length; i++) {
+			main_img = null;
 			post_title = posts_blog[i].title;             // post title
-			post_content = posts_blog[i].content;         // post content
-			main_img = $('img',post_content).get(0); // main image
+			post_content = '<div>' + posts_blog[i].content + '</div>';         // post content
+			main_img = $('img', post_content).get(0); 	  // main image
+			if (main_img == null) {
+				main_img = new Image();
+				main_img.setAttribute('src','images/about.jpg');
+			}
 			content_list_blog.push({title: post_title, content: post_content, img: main_img});
 		}
 
