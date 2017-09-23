@@ -900,4 +900,34 @@ p1{
   font-weight: 300;
   font-family: "Roboto", Arial, serif;
 }
+
+.sponsors-logo {
+  display: flex;  
+  flex-flow: row wrap;
+  height: 500;
+  width: 900;
+  justify-content: space-around;
+  align-content: space-around;
+  
+  /*align-items: center;*/
+}
 /*# sourceMappingURL=style.css.map */
+
+.sponsor-img {
+  height: 200px;
+}
+
+#calendars .heading-section {
+  margin-bottom : 0;
+  margin-top : 1em;
+}
+
+#picture-list {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.gallery-images {
+  height: 200px;
+  margin-bottom:5px;
+}

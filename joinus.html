@@ -53,6 +53,8 @@
 	
 	<link href="css/hover.css" rel="stylesheet" media="all">
 
+	<link rel="stylesheet" href="css/dropdown.css">
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -64,23 +66,9 @@
 
 	</head>
 	<body>
-	<header>
-		<div class="container text-center">
-			<div class="fh5co-navbar-brand">
-			<a href="index.html">
-				<img src="https://raw.githubusercontent.com/junniejune/ksea_uiuc/master/mdl-template-android-dot-com/images/KakaoTalk_20161027_171338566.png"  class="img-responsive" alt="Responsive image" width="250" height="250" align="center">
-			</a>
-			</div>
-			<nav id="fh5co-main-nav" role="navigation">
-				<ul>
-					<li><a href="about.html">About</a></li>
-					<li><a href="events.html">Events</a></li>
-					<li><a href="joinus.html" class="active">Join Us</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+
+	<div w3-include-html="header.html"></div>
+
 	<div class="fh5co-parallax" style="background-image: url(images/hero-1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -88,8 +76,13 @@
 				<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
 					<div class="fh5co-intro fh5co-table-cell">
 						<h1 class="text-center">Join Us</h1>
+
 						<p>New recruits will be held when a new semester begins!</p>
 						<p>Recruit forms to be posted.</p>
+
+						<p>New Recruits to be held when a new semester begins!</p>
+						<p>Recruit forms to be posted</p>
+
 					</div>
 				</div>
 			</div>
@@ -105,9 +98,8 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<p>copyright KSEA 2016</p>
 						<p class="fh5co-social-icons">
-							<a href="#"><i class="icon-twitter-with-circle"></i></a>
-							<a href="#"><i class="icon-facebook-with-circle"></i></a>
-							<a href="#"><i class="icon-instagram-with-circle"></i></a>
+							<a href="https://www.facebook.com/KSEA.IllinoisYG/?hc_ref=SEARCH"><i class="icon-facebook-with-circle"></i></a>
+							<a href="https://www.instagram.com/ksea_uiuc/"><i class="icon-instagram-with-circle"></i></a>
 						</p>
 					</div>
 				</div>
@@ -131,6 +123,45 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
+
+	<script src="js/w3data.js"></script>
+
+	<script>
+		w3IncludeHTML();
+	</script>
+	
+    <script>
+		$(document).ready(function(){
+			addActive();
+		});
+		function addActive(){
+			if($('header').is(':visible')){
+				var url = window.location.pathname;
+				var filename = url.substring(url.lastIndexOf('/')+1);
+				console.log(filename);
+				switch (filename){
+					case 'about.html':
+						$('.header.about').addClass('active');
+						break;
+					case "events.html":
+						$('.header.events').addClass('active');
+						break;
+					case "joinus.html":
+						$('.header.joinus').addClass('active');
+						break;
+					case "sponsors.html":
+						$('.header.sponsors').addClass('active');
+						break;
+					case "contact.html":
+						$('.header.contact').addClass('active');
+						break;
+				}
+			}
+			else {
+				setTimeout(addActive,50);
+			}
+		}
+    </script>
 	</body>
 </html>
 

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>KSEA YG CHAPTER</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FREEHTML5.CO" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+
+	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link href="css/hover.css" rel="stylesheet" media="all">
+
+	<link rel="stylesheet" href="css/dropdown.css">
+
+	<link href='fullcalendar-3.2.0/fullcalendar.min.css' rel='stylesheet' />
+	<link href='fullcalendar-3.2.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+	<style>
+
+	#calendar {
+		padding-bottom: 100px;
+		max-width: 900px;
+		max-height: 900px;
+		margin: 0 auto;
+		font-size: 14px;
+	}
+
+	</style>
+
+	<style>
+	.card-list {
+		padding-left: 20px;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+	.card {
+	    /* Add shadows to create the "card" effect */
+	    padding: 10px;
+	    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	    transition: 0.3s;
+	    cursor: pointer;
+	}
+
+	/* On mouse-over, add a deeper shadow */
+	.card:hover {
+	    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+
+	/* Add some padding inside the card container */
+	.container {
+	    /*padding: 2px 16px;*/
+	}
+
+	#card-img {
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		-o-object-fit: cover;
+		float: left;
+		/*padding: 5px*/
+		padding-right: 10px;
+	}
+    </style>
+
+    <style>
+    .heading-section {
+		margin-bottom: 1em;
+	}
+    </style>
+
+    <style>
+    h4 {
+    	padding-left: 5px;
+    	padding-right: 5px;
+    	padding-top: 15px;
+    	line-height: 0;
+    	font-size: 20px;
+    }
+    #blog-content-text {
+    	line-height: 1;
+    	font-size: 16px;
+    	color: #727272;
+    	height: 32px;
+    	display: block;
+    	white-space: normal;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    }
+    </style>
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<div w3-include-html="header.html"></div>
+
+	<script src="js/w3data.js"></script>
+
+	<script>
+		w3IncludeHTML();
+	</script>
+
+	</head>
+	<body>
+	
+	<div class="fh5co-parallax" style="background-image: url(images/hero-1.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-center fh5co-table">
+					<div class="fh5co-intro fh5co-table-cell">
+						<h1 class="text-center">Blog</h1>
+						<p>upcoming events and past events</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- end: fh5co-parallax -->
+
+
+	<div id="fh5co-common-section">
+		<div id="blogs" class="container">
+			<div class="heading-section text-center">
+				<h2 class="hvr-hang">Blog</h2>
+			</div>
+			<div class="card-list"></div>
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title" id="blog-title"></h4>
+						</div>
+						<div class="modal-body">
+							<p id="blog-body"></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="close-btn">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="page-btn-list" style="text-align: center"></div>
+		</div>
+	</div>
+
+	<footer>
+		<div id="footer" class="fh5co-border-line">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<p>copyright KSEA 2016</p>
+						<p class="fh5co-social-icons">
+							<a href="https://www.facebook.com/KSEA.IllinoisYG/?hc_ref=SEARCH"><i class="icon-facebook-with-circle"></i></a>
+							<a href="https://www.instagram.com/ksea_uiuc/"><i class="icon-instagram-with-circle"></i></a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+	var post_per_page = 10;
+	var pages_displayed = 10;
+
+	var content_list_blog = [];
+	var num_pages = 0;
+	var current_page = 0;
+
+	function load_page(page_num) {
+		if (page_num < 0 || page_num >= num_pages) {
+			return;
+		}
+
+		$(".card-list").html("");
+		$(".page-btn-list").html("");
+		for (var j = page_num*post_per_page; j < content_list_blog.length && j < (page_num+1)*post_per_page; j++) {
+	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img  id="card-img" align="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:100%"><h4><b>' + content_list_blog[j].title + '</b></h4><div id="blog-content-text">' + $(content_list_blog[j].content).text().replace(/(?:\r\n|\r|\n)/g, '') + '</div></div></div>';
+
+	        $('.card-list').append(newHTML);
+	    }
+
+	    $('.card').click(function() {
+	        $("#blog-title").html(content_list_blog[this.getAttribute('value')].title);
+	        $("#blog-body").html(content_list_blog[this.getAttribute('value')].content);
+		});
+
+	    $('.page-btn-list').append('<a class="page-nav-btn" style="cursor: pointer" value=0>prev</a>');
+
+	    var tmp = Math.floor(page_num/pages_displayed);
+
+		for (var i = tmp*pages_displayed; i < num_pages && i < (tmp+1)*pages_displayed; i++) {
+			$('.page-btn-list').append(' | ');
+			if (i != page_num)
+				$('.page-btn-list').append('<a class="page-btn" style="cursor: pointer" value=' + i + '>' + (i+1) + '</a>');
+			else
+				$('.page-btn-list').append(i+1);
+		}
+
+		$('.page-btn-list').append(' | <a class="page-nav-btn" style="cursor: pointer" value=1>next</a>');
+
+		$('.page-nav-btn').click(function() {
+			if (this.getAttribute('value') == 0) {
+				load_page(parseInt(page_num)-1);
+			} else {
+				load_page(parseInt(page_num)+1);
+			}
+		});
+
+		$('.page-btn').click(function() {
+			load_page(this.getAttribute('value'));
+		});
+
+		current_page = page_num;
+	}
+
+	$.get('https://www.googleapis.com/blogger/v3/blogs/6054478386078998841/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
+		var posts_blog = data.items;
+		for (var i = 0; i < posts_blog.length; i++) {
+			main_img = null;
+			post_title = posts_blog[i].title;             // post title
+			post_content = '<div>' + posts_blog[i].content + '</div>';         // post content
+			main_img = $('img', post_content).get(0); 	  // main image
+			if (main_img == null) {
+				main_img = new Image();
+				main_img.setAttribute('src','images/about.jpg');
+			}
+			content_list_blog.push({title: post_title, content: post_content, img: main_img});
+		}
+
+		num_pages = Math.ceil(content_list_blog.length / post_per_page);
+
+		load_page(0);
+	});
+
+	</script>
+
+	<script type='text/javascript' src='fullcalendar-3.2.0/gcal.js'></script>
+	
+    <script>
+		$(document).ready(function(){
+			addActive();
+		});
+		function addActive(){
+			if($('header').is(':visible')){
+				var url = window.location.pathname;
+				var filename = url.substring(url.lastIndexOf('/')+1);
+				console.log(filename);
+				switch (filename){
+					case 'about.html':
+						$('.header.about').addClass('active');
+						break;
+					case "events.html":
+						$('.header.events').addClass('active');
+						break;
+					case "joinus.html":
+						$('.header.joinus').addClass('active');
+						break;
+					case "sponsors.html":
+						$('.header.sponsors').addClass('active');
+						break;
+					case "contact.html":
+						$('.header.contact').addClass('active');
+						break;
+				}
+			}
+			else {
+				setTimeout(addActive,50);
+			}
+		}
+    </script>
+
+    <!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Owl carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- Stellar -->
+	<script src="js/jquery.stellar.min.js"></script>
+
+	<script src='fullcalendar-3.2.0/lib/moment.min.js'></script>
+	<script src='fullcalendar-3.2.0/fullcalendar.min.js'></script>
+
+    <!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>

@@ -12,12 +12,12 @@
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
-  <!-- 
+  <!--
 	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
+	FREE HTML5 TEMPLATE
 	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
+
 	Website: 		http://freehtml5.co/
 	Email: 			info@freehtml5.co
 	Twitter: 		http://twitter.com/fh5co
@@ -41,7 +41,7 @@
 	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
 
 	<!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'> -->
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -50,8 +50,10 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 
 	<link rel="stylesheet" href="css/style.css">
-	
+
 	<link href="css/hover.css" rel="stylesheet" media="all">
+
+	<link rel="stylesheet" href="css/dropdown.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -59,28 +61,14 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	
+
 
 
 	</head>
 	<body>
-	<header>
-		<div class="container text-center">
-			<div class="fh5co-navbar-brand">
-			<a href="index.html">
-				<img src="https://raw.githubusercontent.com/junniejune/ksea_uiuc/master/mdl-template-android-dot-com/images/KakaoTalk_20161027_171338566.png"  class="img-responsive" alt="Responsive image" width="250" height="250" align="center">
-			</a>
-			</div>
-			<nav id="fh5co-main-nav" role="navigation">
-				<ul>
-					<li><a href="about.html">About</a></li>
-					<li><a href="events.html">Events</a></li>
-					<li><a href="joinus.html">Join Us</a></li>
-					<li><a href="contact.html" class="active">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+		
+	<div w3-include-html="header.html"></div>
+
 	<div class="fh5co-parallax" style="background-image: url(images/hero-1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -103,32 +91,34 @@
 					<ul class="contact-info">
 						<li><i class="icon-location-pin"></i>198 West 21th Street, Suite 721 New York NY 10016</li>
 						<li><i class="icon-phone2"></i>+ 1235 2355 98</li>
-						<li><i class="icon-mail"></i><a href="#">kseayg@gmail.com</a></li>
-						<li><i class="icon-globe2"></i><a href="#">kseayg.org</a></li>
+						<li><i class="icon-mail"></i><a href="mailto:kseauiuc.web@gmail.com">kseauiuc.web@gmail.com</a></li>
+						<li><i class="icon-globe2"></i><a href="http://uiucksea.org">uiucksea.org</a></li>
 					</ul>
 				</div>
 				<div class="col-md-8 animate-box">
 					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Name">
+						<form id="contact-form">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="NAME" id="contact-name" class="form-control" placeholder="Name">
+								</div>
 							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Email">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" name="EMAIL" id="contact-address" class="form-control" placeholder="Email">
+								</div>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<textarea name="" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+							<div class="col-md-12">
+								<div class="form-group">
+									<textarea name="MESSAGE" id="contact-context" class="form-control" id="" cols="30" rows="7" placeholder="Message"></textarea>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<input type="submit" value="Send Message" class="btn btn-primary">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="submit" value="Send Message" class="btn btn-primary">
+								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>
 			</div>
@@ -143,9 +133,8 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<p>copyright KSEA 2016</p>
 						<p class="fh5co-social-icons">
-							<a href="#"><i class="icon-twitter-with-circle"></i></a>
-							<a href="#"><i class="icon-facebook-with-circle"></i></a>
-							<a href="#"><i class="icon-instagram-with-circle"></i></a>
+							<a href="https://www.facebook.com/KSEA.IllinoisYG/?hc_ref=SEARCH"><i class="icon-facebook-with-circle"></i></a>
+							<a href="https://www.instagram.com/ksea_uiuc/"><i class="icon-instagram-with-circle"></i></a>
 						</p>
 					</div>
 				</div>
@@ -169,7 +158,48 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
+	<script src="js/postdata.js"></script>
+	<script>
+		postData('#contact-form',{name:'#contact-name',addr:'#contact-address',context:'#contact-context'},'https://script.google.com/macros/s/AKfycbxMnqC4qQKASDs0f1lfdKTuZz-Jn6oWpaGwwYFL-8q9eRs8fLut/exec');
+	</script>
+	
+	<script src="js/w3data.js"></script>
+
+	<script>
+		w3IncludeHTML();
+	</script>
+	
+    <script>
+		$(document).ready(function(){
+			addActive();
+		});
+		function addActive(){
+			if($('header').is(':visible')){
+				var url = window.location.pathname;
+				var filename = url.substring(url.lastIndexOf('/')+1);
+				console.log(filename);
+				switch (filename){
+					case 'about.html':
+						$('.header.about').addClass('active');
+						break;
+					case "events.html":
+						$('.header.events').addClass('active');
+						break;
+					case "joinus.html":
+						$('.header.joinus').addClass('active');
+						break;
+					case "sponsors.html":
+						$('.header.sponsors').addClass('active');
+						break;
+					case "contact.html":
+						$('.header.contact').addClass('active');
+						break;
+				}
+			}
+			else {
+				setTimeout(addActive,50);
+			}
+		}
+    </script>
 	</body>
 </html>
-
-

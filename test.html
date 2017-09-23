@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+};
+xhttp.open("GET", "http://kseauiucyg.blogspot.com/feeds/posts/default", true);
+xhttp.send();
+
+function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+
+    var contents = xmlDoc.getElementsByTagName("content");
+
+    for(var j=0, k=contents.length; j<k; j++){
+
+//parse title
+    document.getElementById("demo").innerHTML += 
+    xmlDoc.getElementsByTagName("title")[j+1].childNodes[0].nodeValue;
+
+
+//parse body 
+    document.getElementById("demo").innerHTML += 
+    xmlDoc.getElementsByTagName("content")[j].childNodes[0].nodeValue;
+
+}
+
+}
+</script>
+
+</body>
+</html>

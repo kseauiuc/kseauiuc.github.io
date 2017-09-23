@@ -53,34 +53,101 @@
 	
 	<link href="css/hover.css" rel="stylesheet" media="all">
 
+	<link rel="stylesheet" href="css/dropdown.css">
+
+	<link href='fullcalendar-3.2.0/fullcalendar.min.css' rel='stylesheet' />
+	<link href='fullcalendar-3.2.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+	<style>
+
+	#calendar {
+		padding-bottom: 100px;
+		max-width: 900px;
+		max-height: 900px;
+		margin: 0 auto;
+		font-size: 14px;
+	}
+
+	</style>
+
+	<style>
+	.card-list {
+		padding-left: 20px;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+	.card {
+	    /* Add shadows to create the "card" effect */
+	    padding: 10px;
+	    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	    transition: 0.3s;
+	    cursor: pointer;
+	}
+
+	/* On mouse-over, add a deeper shadow */
+	.card:hover {
+	    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+	}
+
+	/* Add some padding inside the card container */
+	.container {
+	    /*padding: 2px 16px;*/
+	}
+
+	#card-img {
+		width: 200px;
+		height: 200px;
+		object-fit: cover;
+		-o-object-fit: cover;
+		float: left;
+		/*padding: 5px*/
+		padding-right: 10px;
+	}
+    </style>
+
+    <style>
+    .heading-section {
+		margin-bottom: 1em;
+	}
+    </style>
+
+    <style>
+    h4 {
+    	padding-left: 5px;
+    	padding-right: 5px;
+    	padding-top: 15px;
+    	line-height: 0;
+    	font-size: 20pt;
+    }
+    #blog-content-text {
+    	line-height: 1;
+    	font-size: 16px;
+    	color: #727272;
+    	height: 32px;
+    	display: block;
+    	white-space: normal;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+    }
+    </style>
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-	
 
+	<script src="js/w3data.js"></script>
 
+	<div w3-include-html="header.html"></div>
+
+	<script>
+		w3IncludeHTML();
+	</script>
 	</head>
+
 	<body>
-	<header>
-		<div class="container text-center">
-			<div class="fh5co-navbar-brand">
-			<a href="index.html">
-				<img src="https://raw.githubusercontent.com/junniejune/ksea_uiuc/master/mdl-template-android-dot-com/images/KakaoTalk_20161027_171338566.png"  class="img-responsive" alt="Responsive image" width="250" height="250" align="center">
-			</a>
-			</div>
-			<nav id="fh5co-main-nav" role="navigation">
-				<ul>
-					<li><a href="about.html">About</a></li>
-					<li><a href="events.html" class="active">Events</a></li>
-					<li><a href="joinus.html">Join Us</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
 	<div class="fh5co-parallax" style="background-image: url(images/hero-1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -94,22 +161,51 @@
 			</div>
 		</div>
 	</div><!-- end: fh5co-parallax -->
-	
-	<div id="fh5co-common-section">
-		<div class="container">
-			<div class="heading-section text-center">
-				<h2 class="hvr-hang">Calendar</h2>
-				<p>sync with google calendar here</p>
-			</div>
-		</div>
 
-		<div class="container">
+
+	<div id="fh5co-common-section">
+		<div id="blogs" class="container">
+			<div class="heading-section text-center">
+				<h2 class="hvr-hang">Blog</h2>
+			</div>
+			<div class="card-list"></div>
+			<div class="more-blog" style="text-align: right; padding-right: 20px"><a href="events_blog.html">More Blog >></a></div>
+		</div>
+	</div>
+
+
+	<div id="fh5co-common-section">
+		<div id="gallery" class="container">
 			<div class="heading-section text-center">
 				<h2 class="hvr-hang">Gallery</h2>
-				<p>event pics here</p>
+			</div>
+			<div id="picture-list"></div>
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title" id="blog-title"></h4>
+						</div>
+						<div class="modal-body">
+							<p id="blog-body"></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal" id="close-btn">Close</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+	</div>
 
+	<div id="fh5co-common-section">
+		<div id="calendars" class="container">
+			<div class="heading-section text-center">
+				<h2 class="hvr-hang">Calendar</h2>
+			</div>
+			<div id='calendar'></div>
+		</div>
 	</div>
 
 	<footer>
@@ -119,9 +215,8 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<p>copyright KSEA 2016</p>
 						<p class="fh5co-social-icons">
-							<a href="#"><i class="icon-twitter-with-circle"></i></a>
-							<a href="#"><i class="icon-facebook-with-circle"></i></a>
-							<a href="#"><i class="icon-instagram-with-circle"></i></a>
+							<a href="https://www.facebook.com/KSEA.IllinoisYG/?hc_ref=SEARCH"><i class="icon-facebook-with-circle"></i></a>
+							<a href="https://www.instagram.com/ksea_uiuc/"><i class="icon-instagram-with-circle"></i></a>
 						</p>
 					</div>
 				</div>
@@ -135,7 +230,127 @@
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
+		
+	<script>
+	var content_list = [];
+	$.get('https://www.googleapis.com/blogger/v3/blogs/7901125432127081896/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
+		var posts = data.items;
+		for (var i = 0; i < posts.length; i++) {
+			main_img = null;
+			post_title = posts[i].title;             // post title
+			post_content = '<div>' + posts[i].content + '</div>';         // post content
+			main_img = $('img',post_content).get(0); // main image
+			if (main_img == null) {
+				main_img = new Image();
+				main_img.setAttribute('src','images/about.jpg');
+			}
+			content_list.push({title: post_title, content: post_content, img: main_img});
+		}
+		var img_list = [];
+		var temp_img;
+		for (var j = 0; j < content_list.length; j++) {
+			temp_img = new Image();
+			temp_img.setAttribute('src',content_list[j].img.getAttribute('src'));
+			temp_img.setAttribute('data-toggle','modal');
+			temp_img.setAttribute('data-target','#myModal');
+			temp_img.setAttribute('style','cursor: pointer;')
+			temp_img.setAttribute('value',j);
+			temp_img.setAttribute('class','modal-btn-class gallery-images');
+			img_list.push(temp_img);
+		}
+		$('#picture-list').html(img_list);
+
+		$('.modal-btn-class').click(function() {
+			$("#blog-title").html(content_list[this.getAttribute('value')].title);
+			$("#blog-body").html(content_list[this.getAttribute('value')].content);
+		});
+	});
+
+	</script>
+
+	<script>
+	var content_list_blog = [];
+	var max_text_length = 40;
+	$.get('https://www.googleapis.com/blogger/v3/blogs/6054478386078998841/posts?key=AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc', function(data) {
+		var posts_blog = data.items;
+		for (var i = 0; i < posts_blog.length; i++) {
+			main_img = null;
+			post_title = posts_blog[i].title;             // post title
+			post_content = '<div>' + posts_blog[i].content + '</div>';         // post content
+			main_img = $('img', post_content).get(0); 	  // main image
+			if (main_img == null) {
+				main_img = new Image();
+				main_img.setAttribute('src','images/about.jpg');
+			}
+			content_list_blog.push({title: post_title, content: post_content, img: main_img});
+		}
+
+	    for (var j = 0; j < content_list_blog.length; j++) {
+	    	newHTML = '<div class="card" data-toggle="modal" data-target="#myModal" value="' + j + '"><img  id="card-img" align="top" src="' + content_list_blog[j].img.getAttribute('src') + '"><div class="container" style="width:100%"><h4><b>' + content_list_blog[j].title + '</b></h4><div id="blog-content-text">' + $(content_list_blog[j].content).text().replace(/(?:\r\n|\r|\n)/g, '') + '</div></div></div>';
+
+	        $(".card-list").append(newHTML);
+	    }
+
+	    $('.card').click(function() {
+	        $("#blog-title").html(content_list_blog[this.getAttribute('value')].title);
+	        $("#blog-body").html(content_list_blog[this.getAttribute('value')].content);
+		})		
+	});
+	</script>
+
+	<script type='text/javascript'>
+
+	$(document).ready(function() {
+	    $('#calendar').fullCalendar({
+		googleCalendarApiKey: 'AIzaSyD5FdM8HEOxook5Njgd1kVM6gu5rn4WKzc',
+		events: {
+		    googleCalendarId: 'kvrb00gbgooeeeel3agpmescuo@group.calendar.google.com',
+		    color: 'orange'
+		}
+	    });
+	});
+
+	</script>
+
+	<script src='fullcalendar-3.2.0/lib/moment.min.js'></script>
+	<script src='fullcalendar-3.2.0/fullcalendar.min.js'></script>
+
+	<script type='text/javascript' src='fullcalendar-3.2.0/gcal.js'></script>
+	
+    <script>
+		$(document).ready(function(){
+			addActive();
+		});
+		function addActive(){
+			if($('header').is(':visible')){
+				var url = window.location.pathname;
+				var filename = url.substring(url.lastIndexOf('/')+1);
+				console.log(filename);
+				switch (filename){
+					case 'about.html':
+						$('.header.about').addClass('active');
+						break;
+					case "events.html":
+						$('.header.events').addClass('active');
+						break;
+					case "joinus.html":
+						$('.header.joinus').addClass('active');
+						break;
+					case "sponsors.html":
+						$('.header.sponsors').addClass('active');
+						break;
+					case "contact.html":
+						$('.header.contact').addClass('active');
+						break;
+				}
+			}
+			else {
+				setTimeout(addActive,50);
+			}
+		}
+    </script>
+
+    <!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Owl carousel -->
 	<script src="js/owl.carousel.min.js"></script>
@@ -148,5 +363,3 @@
 	</body>
 </html>
 
-
-s

@@ -53,6 +53,8 @@
 	
 	<link href="css/hover.css" rel="stylesheet" media="all">
 
+	<link rel="stylesheet" href="css/dropdown.css">
+
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
@@ -60,27 +62,11 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 	
-
-
 	</head>
 	<body>
-	<header>
-		<div class="container text-center">
-			<div class="fh5co-navbar-brand">
-			<a href="index.html">
-				<img src="https://raw.githubusercontent.com/junniejune/ksea_uiuc/master/mdl-template-android-dot-com/images/KakaoTalk_20161027_171338566.png"  class="img-responsive" alt="Responsive image" width="250" height="250" align="center">
-			</a>
-			</div>
-			<nav id="fh5co-main-nav" role="navigation">
-				<ul>
-					<li><a href="about.html" class="active">About</a></li>
-					<li><a href="events.html">Events</a></li>
-					<li><a href="joinus.html">Join Us</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+		
+	<div w3-include-html="header.html"></div>
+
 	<div class="fh5co-parallax" style="background-image: url(images/hero-1.jpg);" data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="container">
@@ -114,8 +100,10 @@
 					<div class="col-md-8 col-sm-8">
 
 						<div class="about-desc">
-							<h3>Korean Student Engineering Association</h3>
-							<p1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum ultricies odio, rhoncus rutrum metus iaculis at. Praesent tincidunt sapien justo, eu tristique sapien ultricies a. Nullam at dui eu mi feugiat laoreet. Proin sodales, eros laoreet porttitor lobortis, odio nunc feugiat nulla, at feugiat odio sem sed justo. Suspendisse orci est, varius ut leo id, tempus imperdiet massa. Praesent pulvinar volutpat diam vitae lacinia. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p1>
+							<h3>Korean-American Scientists and Engineers' Association</h3>
+							<p1>
+							KSEA University of Illinois YG Chapter는 미국 전역에서 활동하고 있는 Korean-American Scientists and Engineers Association (이하 KSEA)의 하나의 Chapter입니다. KSEA는 미국전역에 총 42개의 Local Chapter를 가지고 있으며, 그 중 29 곳 아래에 Young Generation Chapter가 있습니다. 저희는 University of Illinois Chapter 아래에 있는 YG Chapter입니다. 
+							</p1>
 						</div>
 					</div>
 				</div>
@@ -134,7 +122,7 @@
 								<div class="desc">
 									<h3>Career Team</h3>
 									<span>career</span>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum ultricies odio, rhoncus rutrum metus iaculis at. Praesent tincidunt sapien justo, eu tristique sapien ultricies a. </p>
+									<p>대학교 졸업후 취업을 위한 정보를 조사하여 한인 학생들에게 도움을 주고자 노력하는 팀입니다. 멤버들이 서로 힘을 합쳐 mock interview data를 모아 가상 면접이나 채용 설명회와 같은 정보를 얻을 수 있는 기회를 제공하고 교내 리서치 기회, 채용 캘린더 등 정보를 모아 제공하고 있습니다. </p>
 								</div>
 							</div>
 						</div>
@@ -160,7 +148,7 @@
 								<div class="desc">
 									<h3>Event Team</h3>
 									<span>event</span>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin condimentum ultricies odio, rhoncus rutrum metus iaculis at. Praesent tincidunt sapien justo, eu tristique sapien ultricies a. </p>
+									<p>KSEA에서 주최하는 모든 행사에 필요한 자금을 마련하기위해 펀드레이징을 기획 및 진행하고 멤버 간의 친목 도모를 위한 행사를 주최하며 대외적으로는 이공계 커뮤니티의 발전에 일조하기 위한 각종 이벤트를 개최합니다.</p>
 
 
 								</div>
@@ -211,9 +199,9 @@
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<p>copyright KSEA 2016</p>
 						<p class="fh5co-social-icons">
-							<a href="#"><i class="icon-twitter-with-circle"></i></a>
-							<a href="#"><i class="icon-facebook-with-circle"></i></a>
-							<a href="#"><i class="icon-instagram-with-circle"></i></a>
+							<!--<a href="#"><i class="icon-twitter-with-circle"></i></a>-->
+							<a href="https://www.facebook.com/KSEA.IllinoisYG/?hc_ref=SEARCH"><i class="icon-facebook-with-circle"></i></a>
+							<a href="https://www.instagram.com/ksea_uiuc/"><i class="icon-instagram-with-circle"></i></a>
 						</p>
 					</div>
 				</div>
@@ -237,6 +225,44 @@
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
 
+	<script src="js/w3data.js"></script>
+
+	<script>
+		w3IncludeHTML();
+	</script>
+	
+    <script>
+		$(document).ready(function(){
+			addActive();
+		});
+		function addActive(){
+			if($('header').is(':visible')){
+				var url = window.location.pathname;
+				var filename = url.substring(url.lastIndexOf('/')+1);
+				console.log(filename);
+				switch (filename){
+					case 'about.html':
+						$('.header.about').addClass('active');
+						break;
+					case "events.html":
+						$('.header.events').addClass('active');
+						break;
+					case "joinus.html":
+						$('.header.joinus').addClass('active');
+						break;
+					case "sponsors.html":
+						$('.header.sponsors').addClass('active');
+						break;
+					case "contact.html":
+						$('.header.contact').addClass('active');
+						break;
+				}
+			}
+			else {
+				setTimeout(addActive,50);
+			}
+		}
+    </script>
 	</body>
 </html>
 
