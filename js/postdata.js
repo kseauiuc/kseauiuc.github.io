@@ -37,6 +37,7 @@ $(_id).submit(function(event){
     request.done(function (response, textStatus, jqXHR){
         // Log a message to the console
         console.log("Hooray, it worked!");
+        window.alert("Your message has been sent!");
         for(child in _children){
           $(_children[child]).val('');
         }
