@@ -777,6 +777,9 @@ header #fh5co-main-nav > ul li:first-child {
 .about .team-section-grid .overlay-section p {
   color: rgba(255, 255, 255, 0.8);
 }
+.about .team-section-grid .overlay-section ul {
+  color: rgba(255, 255, 255, 0.8);
+}
 .about .team-section-grid .overlay-section p.fh5co-social-icons a:hover, .about .team-section-grid .overlay-section p.fh5co-social-icons a:focus {
   text-decoration: none !important;
 }
@@ -890,7 +893,7 @@ input[type="text"] {
 }
 
 .about-desc{
-	font-size: 10px !import;
+	font-size: 10px !important;
 }
 
 p1{
@@ -900,7 +903,13 @@ p1{
   font-weight: 300;
   font-family: "Roboto", Arial, serif;
 }
-
+p1{
+  margin-bottom: 0.5em;
+  font-size: 18px;
+  color: #727272;
+  font-weight: 300;
+  font-family: "Roboto", Arial, serif;
+}
 .sponsors-logo {
   display: flex;  
   flex-flow: row wrap;
