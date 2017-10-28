@@ -15,7 +15,7 @@ gapi.client.init({
 $.ajax('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLXZVLgX7K_jQib3JmQhRguXM6X5EsHzdU&key=AIzaSyDap2KiZIsgZ_L519Ssx-DyEWAtl1IjN4U').done(function(res){
     var videos = res.items;
     videos.forEach(function(video,idx){
-        var tag = "<div class='video' onclick='setNewVideo("+video.id+")><img src='"+video.snippet.thumbnails.standard.url+"'><div class='video-title'>"+video.snippet.title+"</div></div>"
+        var tag = "<div class='video' onclick='setNewVideo("+video.id+")'><img src='"+video.snippet.thumbnails.standard.url+"'><div class='video-title'>"+video.snippet.title+"</div></div>"
         $("#youtube .video-list").append(tag);
         if(idx == 0){
             setNewVideo(video.id);
