@@ -753,10 +753,11 @@ header #fh5co-main-nav > ul li:first-child {
   margin-bottom: 50px;
 }
 .about .team-section-grid {
-  position: relative;
-  background-size: cover;
-  height: 300px;
-  margin-bottom: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    min-height: 300px;
+    width: 400px;
 }
 .about .team-section-grid .overlay-section {
   position: absolute;
@@ -955,4 +956,11 @@ p1{
 }
 .bm-greetings{
   margin: 10px 0px 10px 0px;
+}
+.team-image{
+  display: flex;
+  position: relative;
+  background-size: contain;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
 }
