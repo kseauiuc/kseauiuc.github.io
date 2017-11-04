@@ -32,9 +32,6 @@ $.ajax('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResu
     });
 });
 
-function setNewVideo(videoId){
-   YT.loadVideoById(videoId,0,"default");
-}
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 var player;
@@ -54,3 +51,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event){
     event.target.playVideo();    
 }
+
+function setNewVideo(videoId){
+    player.loadVideoById(videoId,0,"default");
+ }
