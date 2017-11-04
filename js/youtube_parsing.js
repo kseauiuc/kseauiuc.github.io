@@ -22,7 +22,10 @@ $.ajax('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResu
         }
     });
 });
+var vid;
 function setNewVideo(videoId){
+    vid = videoId;
+    
     // 2. This code loads the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
 
@@ -30,21 +33,21 @@ function setNewVideo(videoId){
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var player;
-
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '390',
-            width: '640',
-            videoId: videoId,
-            events: {
-            'onReady': onPlayerReady
-            }
-        });
-        }
 }
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: vid,
+        events: {
+        'onReady': onPlayerReady
+        }
+    });
+    }
 
 
 function onPlayerReady(event){
