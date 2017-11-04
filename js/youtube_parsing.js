@@ -19,6 +19,7 @@ $.ajax('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResu
         var tag = "<div class='video pointer' onclick='setNewVideo("+video.id+")'><img src='"+video.snippet.thumbnails.standard.url+"'><div class='video-title'>"+video.snippet.title+"</div></div>"
         $("#youtube .video-list").append(tag);
         if(idx == 0){
+            console.log(video);
             vid = video.id;
             
             // 2. This code loads the IFrame Player API code asynchronously.
