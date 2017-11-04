@@ -12,27 +12,27 @@ gapi.client.init({
     GoogleAuth.isSignedIn.listen(updateSigninStatus);
 });
 }
+var vid;
 $.ajax('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLXZVLgX7K_jQib3JmQhRguXM6X5EsHzdU&key=AIzaSyDap2KiZIsgZ_L519Ssx-DyEWAtl1IjN4U').done(function(res){
     var videos = res.items;
     videos.forEach(function(video,idx){
         var tag = "<div class='video pointer' onclick='setNewVideo("+video.id+")'><img src='"+video.snippet.thumbnails.standard.url+"'><div class='video-title'>"+video.snippet.title+"</div></div>"
         $("#youtube .video-list").append(tag);
         if(idx == 0){
-            setNewVideo(video.id);
+            vid = video.id;
+            
+            // 2. This code loads the IFrame Player API code asynchronously.
+            var tag = document.createElement('script');
+        
+            tag.src = "https://www.youtube.com/iframe_api";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         }
     });
 });
-var vid;
+
 function setNewVideo(videoId){
-    vid = videoId;
-    
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
-
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
+   YT.loadVideoById(videoId,0,"default");
 }
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
