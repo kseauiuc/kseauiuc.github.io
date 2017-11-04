@@ -53,5 +53,5 @@ function onPlayerReady(event){
 }
 
 function setNewVideo(videoId){
-    player.loadVideoById(videoId,0,"default");
+    player.loadVideoById(videoId,0,"large");
  }
