@@ -197,13 +197,13 @@
 							<!-- warapper -->
 							<div class="carousel-inner" role="listbox">
 								<div class="item active modal-body">
-									<p id="blog-body"></p>
+									<p class="blog-body"></p>
 								</div>
 								<div class="item">
-									<p id="blog-body"></p>
+									<p class="blog-body"></p>
 								</div>
 								<div class="item">
-									<p id="blog-body"></p>
+									<p class="blog-body"></p>
 								</div>
 							</div>
 							<!-- Controls -->
@@ -304,7 +304,7 @@
 
 		$('.modal-btn-class').click(function() {
 			$("#blog-title").html(content_list[this.getAttribute('value')].title);
-			$("#blog-body").html(content_list[this.getAttribute('value')].content);
+			$(".blog-body").html(content_list[this.getAttribute('value')].content);
 		});
 	});
 
@@ -335,7 +335,7 @@
 
 	    $('.card').click(function() {
 	        $("#blog-title").html(content_list_blog[this.getAttribute('value')].title);
-	        $("#blog-body").html(content_list_blog[this.getAttribute('value')].content);
+	        $(".blog-body").html(content_list_blog[this.getAttribute('value')].content);
 		})		
 	});
 	</script>
