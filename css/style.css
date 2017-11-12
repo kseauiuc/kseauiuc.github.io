@@ -968,3 +968,18 @@ p1{
 .pointer{
   cursor: pointer;
 }
+
+#youtube #player, #youtube .video-list{
+  display: inline-block;
+}
+#youtube .video-list{
+  height:390px;
+  overflow-y: scroll;
+}
+#youtbue .video-list .video img{
+  width: 60%;
+}
+#youtube .video-list .video .video-title{
+  width: 40%;
+  display:inline-block;
+}
