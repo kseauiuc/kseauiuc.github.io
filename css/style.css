@@ -981,7 +981,6 @@ p1{
   width: calc(100% - 646px);
   height:390px;
   overflow-y: scroll;
-  vertical-align: text-top;
 }
 @media screen and (max-width:960px){
 
