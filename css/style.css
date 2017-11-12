@@ -984,7 +984,6 @@ display:none;
 }
 #youtube #player{
   text-align: center;
-  
 }
 #youtube .video-list{
   width: calc(100% - 646px);
