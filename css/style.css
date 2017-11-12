@@ -974,7 +974,7 @@ p1{
   display: inline-block;
 }
 #youtube .video-list{
-  width: calc('100%-640px');
+  width: calc(100% - 646px);
   height:390px;
   overflow-y: scroll;
 }
