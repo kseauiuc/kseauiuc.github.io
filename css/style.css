@@ -973,15 +973,20 @@ p1{
 #youtube #player, #youtube .video-list{
   display: inline-block;
 }
+#youtube #player{
+  text-align: center;
+  
+}
 #youtube .video-list{
   width: calc(100% - 646px);
   height:390px;
   overflow-y: scroll;
+  vertical-align: text-top;
 }
 @media screen and (max-width:960px){
-  #youtube #player iframe{
-    margin: 0 auto;
-    display:block;
+
+  #youtube #player{
+    display: block;
   }
   #youtube .video-list{
     display:block;
