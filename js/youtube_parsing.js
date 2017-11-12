@@ -20,22 +20,22 @@ $.ajax('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResu
         $("#youtube .video-list").append(tag);
         if(idx == 0){
             console.log(video);
-            vid = video.id;
+            vid = video.snippet.resourceId.videoId;
             
-            $('#player iframe').attr('src','http://www.youtube.com/embed/'+video.id);
+            //$('#player iframe').attr('src','http://www.youtube.com/embed/'+video.id);
             // 2. This code loads the IFrame Player API code asynchronously.
-            /*var tag = document.createElement('script');
+            var tag = document.createElement('script');
         
             tag.src = "http://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);*/
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
         }
     });
 });
 
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
-/*var player;
+var player;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
@@ -51,9 +51,9 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event){
     event.target.playVideo();    
-}*/
+}
 
 function setNewVideo(videoId){
-    //player.loadVideoById(videoId,0,"large");
-    $('#player iframe').attr('src','http://www.youtube.com/embed/'+video.id);
+    player.loadVideoById(videoId,0,"large");
+    //$('#player iframe').attr('src','http://www.youtube.com/embed/'+video.id);
 }
