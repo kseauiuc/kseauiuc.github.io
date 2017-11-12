@@ -306,6 +306,10 @@
 			$("#blog-title").html(content_list[this.getAttribute('value')].title);
 			$(".blog-body").html(content_list[this.getAttribute('value')].content);
 		});
+		($".modal").owlCarousel({
+			singleItem: true;
+			autoPlay: 3000;
+		});
 	});
 
 	</script>
