@@ -755,9 +755,10 @@ header #fh5co-main-nav > ul li:first-child {
 .about .team-section-grid {
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     margin: auto;
     min-height: 300px;
-    width: 400px;
+    /* width: 400px; */
 }
 .about .team-section-grid .overlay-section {
   position: absolute;
@@ -958,7 +959,7 @@ p1{
   margin: 10px 0px 10px 0px;
 }
 .team-image{
-  display: flex;
+  /* display: flex; */
   position: relative;
   background-size: contain;
   margin-bottom: 30px;
