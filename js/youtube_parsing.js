@@ -20,8 +20,9 @@ $.ajax('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResu
         $("#youtube .video-list").append(tag);
         if(idx == 0){
             console.log(video);
-            vid = video.id;
+            vid = video.snippet.resourceId.videoId;
             
+            //$('#player iframe').attr('src','http://www.youtube.com/embed/'+video.id);
             // 2. This code loads the IFrame Player API code asynchronously.
             var tag = document.createElement('script');
         
@@ -54,4 +55,5 @@ function onPlayerReady(event){
 
 function setNewVideo(videoId){
     player.loadVideoById(videoId,0,"large");
- }
+    //$('#player iframe').attr('src','http://www.youtube.com/embed/'+video.id);
+}
