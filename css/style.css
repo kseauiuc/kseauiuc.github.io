@@ -978,6 +978,16 @@ p1{
   height:390px;
   overflow-y: scroll;
 }
+@media screen and (max-width:960px){
+  #youtube #player iframe{
+    margin: 0 auto;
+    display:block;
+  }
+  #youtube .video-list{
+    display:block;
+    width: 100%;
+  }
+}
 #youtube .video-list .video img{
   width: 60%;
 }
