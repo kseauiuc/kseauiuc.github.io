@@ -985,7 +985,7 @@ p1{
 #youtube .video-list{
   width: calc(100% - 646px);
   height:390px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 @media screen and (max-width:960px){
   #youtube #player{
