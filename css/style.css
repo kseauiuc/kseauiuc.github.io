@@ -997,8 +997,12 @@ p1{
     width: 100%;
   }
 }
+#youtube .video-list .video {
+  float: left;
+  margin-right: 5px;
+}
 #youtube .video-list .video img{
-  width: 100%;
+  height: 140px;
 }
 #youtube .video-list .video .video-title{
   /*width: 40%;*/
