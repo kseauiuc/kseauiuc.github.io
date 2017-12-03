@@ -998,12 +998,11 @@ p1{
   }
 }
 #youtube .video-list .video {
-  height: 200px;
   float: left;
   margin-right: 5px;
 }
 #youtube .video-list .video img{
-  width: 100%;
+  height: 200px;
 }
 #youtube .video-list .video .video-title{
   /*width: 40%;*/
