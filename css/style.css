@@ -998,9 +998,9 @@ p1{
   }
 }
 #youtube .video-list .video img{
-  width: 60%;
+  /*width: 60%;*/
 }
 #youtube .video-list .video .video-title{
-  width: 40%;
-  display:inline-block;
+  /*width: 40%;*/
+  display:none;
 }
