@@ -1004,7 +1004,3 @@ p1{
 #youtube .video-list .video img{
   height: 140px;
 }
-#youtube .video-list .video .video-title{
-  /*width: 40%;*/
-  display:none;
-}
