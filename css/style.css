@@ -12,7 +12,7 @@
 *
 * ======================================================= */
 body {
-  font-family: "Roboto", Arial, serif;
+  font-family: "Roboto", Arial, sans-serif;
   line-height: 1.8;
   font-size: 20px;
   font-weight: 300;
@@ -38,7 +38,7 @@ p, span {
   font-size: 20px;
   color: #727272;
   font-weight: 300;
-  font-family: "Roboto", Arial, serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 
 span {
@@ -48,7 +48,7 @@ span {
 
 h1, h2, h3, h4, h5, h6 {
   color: rgba(0, 0, 0, 0.8);
-  font-family: "Roboto", Arial, serif;
+  font-family: "Roboto", Arial, sans-serif;
   font-weight: 300;
   margin: 0 0 30px 0;
 }
@@ -904,14 +904,14 @@ p1{
   font-size: 18px;
   color: #727272;
   font-weight: 300;
-  font-family: "Roboto", Arial, serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 p1{
   margin-bottom: 0.5em;
   font-size: 18px;
   color: #727272;
   font-weight: 300;
-  font-family: "Roboto", Arial, serif;
+  font-family: "Roboto", Arial, sans-serif;
 }
 .sponsors-logo {
   display: flex;  
@@ -970,9 +970,9 @@ p1{
   cursor: pointer;
 }
 @media screen and (max-width: 768px) {
-.display-on-mobile{
-display: none;
-}
+  .display-on-mobile{
+  display: none;
+  }
 }
 @media screen and (min-width: 768px) {
   .display-on-full{
@@ -982,17 +982,14 @@ display: none;
 #youtube #player, #youtube .video-list{
   display: inline-block;
 }
-#youtube #player{
-  text-align: center;
-}
 #youtube .video-list{
   width: calc(100% - 646px);
   height:390px;
   overflow-y: scroll;
 }
 @media screen and (max-width:960px){
-
   #youtube #player{
+    margin: 0 auto;
     display: block;
   }
   #youtube .video-list{
