@@ -242,7 +242,7 @@
 
 	    $('.page-btn-list').append('<a class="page-nav-btn" style="cursor: pointer" value=0>prev</a>');
 
-	    var tmp = Math.floor(page_num/pages_displayed)+1;
+	    var tmp = Math.floor(page_num/pages_displayed);
 
 		for (var i = tmp*pages_displayed; i < num_pages && i < (tmp+1)*pages_displayed; i++) {
 			$('.page-btn-list').append(' | ');
