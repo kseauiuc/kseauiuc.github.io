@@ -999,6 +999,7 @@ p1{
 }
 #youtube .video-list .video img{
   /*width: 60%;*/
+  padding:5px;
 }
 #youtube .video-list .video .video-title{
   /*width: 40%;*/
